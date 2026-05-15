@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>衡量 — PM Workflow</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        PM Workflow
+      </a>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="discover.html">发现</a></li>
+        <li><a href="define.html">定义</a></li>
+        <li><a href="develop.html">开发</a></li>
+        <li><a href="deliver.html">交付</a></li>
+        <li><a href="measure.html">衡量</a></li>
+        <li><a href="iterate.html">迭代</a></li>
+        <li><a href="tools.html">工具</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a>
+        <span>/</span>
+        <span>衡量</span>
+      </div>
+      <h1>📊 衡量 — 验证效果</h1>
+      <div class="subtitle">数据驱动决策。用实验和指标验证产品假设，而不是凭感觉判断"做对了没有"。</div>
+    </div>
+
+    <section>
+      <h2 class="section-title">这个阶段回答的关键问题</h2>
+      <div class="quick-start" style="margin-bottom:32px;">
+        <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:1rem;color:var(--color-text-secondary);">我们的假设到底成不成立？实验怎么设计？</li>
+          <li style="font-size:1rem;color:var(--color-text-secondary);">需要埋哪些点？怎么定义数据指标？</li>
+          <li style="font-size:1rem;color:var(--color-text-secondary);">实验结果告诉我们什么？下一步行动是什么？</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">技能工具</h2>
+      <div class="skill-cards">
+        <div class="skill-card">
+          <h3>🧪 实验设计</h3>
+          <span class="skill-cmd">/experiment-design</span>
+          <div class="skill-desc">严谨的 A/B 测试和实验规划。定义假设、变量、样本量、成功标准和实验周期。</div>
+          <div class="skill-when"><strong>使用时机：</strong>需要对某个功能或策略做定量验证时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📡 埋点规格</h3>
+          <span class="skill-cmd">/instrumentation-spec</span>
+          <div class="skill-desc">定义需要追踪的事件、属性和维度。确保数据收集的完整性和一致性，避免"数据有了但没法分析"。</div>
+          <div class="skill-when"><strong>使用时机：</strong>功能开发和实验启动前，需要定义数据收集方案时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📈 看板需求</h3>
+          <span class="skill-cmd">/dashboard-requirements</span>
+          <div class="skill-desc">设计数据分析看板的结构和指标。明确看板的使用者、核心指标、数据源和刷新频率。</div>
+          <div class="skill-when"><strong>使用时机：</strong>需要搭建数据分析看板来持续监控产品健康度时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📋 实验结果</h3>
+          <span class="skill-cmd">/experiment-results</span>
+          <div class="skill-desc">记录实验的完整结果和学到的教训。包含实验概要、数据分析、统计显著性和行动建议。</div>
+          <div class="skill-when"><strong>使用时机：</strong>实验结束后，需要系统化记录结果和决策时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🎯 OKR 评分</h3>
+          <span class="skill-cmd">/okr-grader</span>
+          <div class="skill-desc">根据预定义类型（承诺型/愿景型/学习型等）对目标完成情况进行评分，拒绝事后改目标等误用行为。</div>
+          <div class="skill-when"><strong>使用时机：</strong>OKR 周期结束时，需要客观评估完成情况</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">产出物</h2>
+      <div class="output-list">
+        <div class="output-item"><span class="output-icon phase-measure">📄</span>实验设计文档</div>
+        <div class="output-item"><span class="output-icon phase-measure">📄</span>埋点规格说明书</div>
+        <div class="output-item"><span class="output-icon phase-measure">📄</span>数据看板需求</div>
+        <div class="output-item"><span class="output-icon phase-measure">📄</span>实验结果报告</div>
+        <div class="output-item"><span class="output-icon phase-measure">📄</span>OKR 评分</div>
+      </div>
+    </section>
+
+    <div class="phase-nav">
+      <a href="deliver.html">
+        <span class="nav-label">← 上一步</span>
+        <span class="nav-title">交付 — 落地执行</span>
+      </a>
+      <a href="iterate.html">
+        <span class="nav-label">下一步 →</span>
+        <span class="nav-title">迭代 — 持续优化</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>PM Workflow — 产品经理工作流参考</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

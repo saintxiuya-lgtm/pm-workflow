@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交付 — PM Workflow</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        PM Workflow
+      </a>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="discover.html">发现</a></li>
+        <li><a href="define.html">定义</a></li>
+        <li><a href="develop.html">开发</a></li>
+        <li><a href="deliver.html">交付</a></li>
+        <li><a href="measure.html">衡量</a></li>
+        <li><a href="iterate.html">迭代</a></li>
+        <li><a href="tools.html">工具</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a>
+        <span>/</span>
+        <span>交付</span>
+      </div>
+      <h1>🚀 交付 — 落地执行</h1>
+      <div class="subtitle">把解决方案转化成可执行的开发任务。一份好的 PRD 让团队知道要做什么、为什么做、怎么算做完。</div>
+    </div>
+
+    <section>
+      <h2 class="section-title">这个阶段回答的关键问题</h2>
+      <div class="quick-start" style="margin-bottom:32px;">
+        <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:1rem;color:var(--color-text-secondary);">这个需求的完整背景和目标是什么？怎么衡量成功？</li>
+          <li style="font-size:1rem;color:var(--color-text-secondary);">具体要做哪些功能？边界条件有哪些？</li>
+          <li style="font-size:1rem;color:var(--color-text-secondary);">发布需要检查什么？怎么通知用户？</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">PRD 工具选择</h2>
+      <div class="quick-start" style="margin-bottom:32px;">
+        <div class="quick-start-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+          <div class="quick-start-item">
+            <span class="qs-command">prd-writer</span>
+            <span class="qs-desc">想法模糊时，先概念引导再展开细节</span>
+          </div>
+          <div class="quick-start-item">
+            <span class="qs-command">vibe-prd-writer</span>
+            <span class="qs-desc">方向清晰后，产出可执行 PRD/ 文件夹</span>
+          </div>
+          <div class="quick-start-item">
+            <span class="qs-command">ai-agent-prd-writer</span>
+            <span class="qs-desc">AI 产品（Agent/工具/对话型）专项处理</span>
+          </div>
+          <div class="quick-start-item">
+            <span class="qs-command">/deliver-prd</span>
+            <span class="qs-desc">正式团队工程交接用标准 PRD 模板</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">技能工具</h2>
+      <div class="skill-cards">
+        <div class="skill-card">
+          <h3>📄 产品需求文档</h3>
+          <span class="skill-cmd">/deliver-prd</span>
+          <div class="skill-desc">全面的 PRD 生成，覆盖问题背景、成功指标、功能需求、技术考量、依赖和风险、时间线。</div>
+          <div class="skill-when"><strong>使用时机：</strong>需要正式输出 PRD 给工程团队或 AI Agent 执行时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📖 用户故事</h3>
+          <span class="skill-cmd">/user-stories</span>
+          <div class="skill-desc">INVEST 合规的用户故事，附带验收标准。把 PRD 中的需求拆解成可开发的独立故事。</div>
+          <div class="skill-when"><strong>使用时机：</strong>PRD 完成后，需要将需求拆分为可执行的故事时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>✅ 验收标准</h3>
+          <span class="skill-cmd">/acceptance-criteria</span>
+          <div class="skill-desc">Given/When/Then 格式的验收标准，确保开发和测试对"做完"有一致的理解。</div>
+          <div class="skill-when"><strong>使用时机：</strong>需要为故事或功能定义测试验收条件时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>⚠️ 边界条件</h3>
+          <span class="skill-cmd">/edge-cases</span>
+          <div class="skill-desc">系统化梳理错误状态、边界值和恢复路径。避免 "99% 好用但 1% 崩溃" 的发布事故。</div>
+          <div class="skill-when"><strong>使用时机：</strong>需求定义阶段，需要深入排查边界和异常情况时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📋 发布清单</h3>
+          <span class="skill-cmd">/launch-checklist</span>
+          <div class="skill-desc">完整的发布检查清单。覆盖功能、技术、运营、法务、市场等维度，确保不遗漏任何一步。</div>
+          <div class="skill-when"><strong>使用时机：</strong>发布前倒数阶段，逐项确认是否准备就绪</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📰 发布说明</h3>
+          <span class="skill-cmd">/release-notes</span>
+          <div class="skill-desc">面向用户的发布说明。用用户能理解的语言描述新功能、修复和改进，保持品牌调性。</div>
+          <div class="skill-when"><strong>使用时机：</strong>功能发布或版本更新时，需要通知用户</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">产出物</h2>
+      <div class="output-list">
+        <div class="output-item"><span class="output-icon phase-deliver">📄</span>PRD（概念版 → 落地版）</div>
+        <div class="output-item"><span class="output-icon phase-deliver">📄</span>用户故事 + 验收标准</div>
+        <div class="output-item"><span class="output-icon phase-deliver">📄</span>边界条件清单</div>
+        <div class="output-item"><span class="output-icon phase-deliver">📄</span>发布检查清单</div>
+        <div class="output-item"><span class="output-icon phase-deliver">📄</span>Release Notes</div>
+      </div>
+    </section>
+
+    <div class="phase-nav">
+      <a href="develop.html">
+        <span class="nav-label">← 上一步</span>
+        <span class="nav-title">开发 — 探索方案</span>
+      </a>
+      <a href="measure.html">
+        <span class="nav-label">下一步 →</span>
+        <span class="nav-title">衡量 — 验证效果</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>PM Workflow — 产品经理工作流参考</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

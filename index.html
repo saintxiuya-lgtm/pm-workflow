@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM Workflow — 产品经理工作流</title>
+  <meta name="description" content="一套完整的产品经理工作流，覆盖从方向验证到复盘迭代的全流程。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        PM Workflow
+      </a>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="discover.html">发现</a></li>
+        <li><a href="define.html">定义</a></li>
+        <li><a href="develop.html">开发</a></li>
+        <li><a href="deliver.html">交付</a></li>
+        <li><a href="measure.html">衡量</a></li>
+        <li><a href="iterate.html">迭代</a></li>
+        <li><a href="tools.html">工具</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>产品经理的 <span>完整工作流</span></h1>
+      <p>一个想法到一款产品，六阶段闭环。每个阶段回答一个关键问题，配套可落地的工具和方法。</p>
+      <div class="hero-flow">
+        <div class="hero-flow-item"><span class="phase-dot phase-discover">发</span><span class="phase-label">发现</span></div>
+        <span class="hero-flow-arrow">→</span>
+        <div class="hero-flow-item"><span class="phase-dot phase-define">定</span><span class="phase-label">定义</span></div>
+        <span class="hero-flow-arrow">→</span>
+        <div class="hero-flow-item"><span class="phase-dot phase-develop">开</span><span class="phase-label">开发</span></div>
+        <span class="hero-flow-arrow">→</span>
+        <div class="hero-flow-item"><span class="phase-dot phase-deliver">交</span><span class="phase-label">交付</span></div>
+        <span class="hero-flow-arrow">→</span>
+        <div class="hero-flow-item"><span class="phase-dot phase-measure">衡</span><span class="phase-label">衡量</span></div>
+        <span class="hero-flow-arrow">→</span>
+        <div class="hero-flow-item"><span class="phase-dot phase-iterate">迭</span><span class="phase-label">迭代</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase Grid -->
+  <section class="container">
+    <div class="phase-grid">
+
+      <!-- 发现 -->
+      <a href="discover.html" class="phase-card" style="text-decoration:none;color:inherit;">
+        <div class="phase-card-header">
+          <div class="phase-card-icon phase-discover">🔍</div>
+          <h3>发现 — 找对问题</h3>
+        </div>
+        <div class="phase-question">"我们真的在解决一个真实存在的问题吗？"</div>
+        <ul class="skill-list">
+          <li class="skill-tag"><span class="cmd">/interview-synthesis</span></li>
+          <li class="skill-tag"><span class="cmd">/competitive-analysis</span></li>
+          <li class="skill-tag"><span class="cmd">/stakeholder-summary</span></li>
+        </ul>
+        <div class="card-footer">
+          <span class="output-label">产出：调研报告 · 竞品分析</span>
+          <span class="card-link" style="color:var(--color-primary);">查看 →</span>
+        </div>
+      </a>
+
+      <!-- 定义 -->
+      <a href="define.html" class="phase-card" style="text-decoration:none;color:inherit;">
+        <div class="phase-card-header">
+          <div class="phase-card-icon phase-define">📋</div>
+          <h3>定义 — 框定问题</h3>
+        </div>
+        <div class="phase-question">"这个问题到底是什么，我们如何衡量成功？"</div>
+        <ul class="skill-list">
+          <li class="skill-tag"><span class="cmd">/problem-statement</span></li>
+          <li class="skill-tag"><span class="cmd">/hypothesis</span></li>
+          <li class="skill-tag"><span class="cmd">/opportunity-tree</span></li>
+          <li class="skill-tag"><span class="cmd">/jtbd-canvas</span></li>
+        </ul>
+        <div class="card-footer">
+          <span class="output-label">产出：问题陈述 · 假设清单</span>
+          <span class="card-link" style="color:var(--color-primary);">查看 →</span>
+        </div>
+      </a>
+
+      <!-- 开发 -->
+      <a href="develop.html" class="phase-card" style="text-decoration:none;color:inherit;">
+        <div class="phase-card-header">
+          <div class="phase-card-icon phase-develop">💡</div>
+          <h3>开发 — 探索方案</h3>
+        </div>
+        <div class="phase-question">"什么样的方案能解决问题，技术上可行吗？"</div>
+        <ul class="skill-list">
+          <li class="skill-tag"><span class="cmd">/solution-brief</span></li>
+          <li class="skill-tag"><span class="cmd">/spike-summary</span></li>
+          <li class="skill-tag"><span class="cmd">/adr</span></li>
+          <li class="skill-tag"><span class="cmd">/design-rationale</span></li>
+        </ul>
+        <div class="card-footer">
+          <span class="output-label">产出：方案简述 · ADR</span>
+          <span class="card-link" style="color:var(--color-primary);">查看 →</span>
+        </div>
+      </a>
+
+      <!-- 交付 -->
+      <a href="deliver.html" class="phase-card" style="text-decoration:none;color:inherit;">
+        <div class="phase-card-header">
+          <div class="phase-card-icon phase-deliver">🚀</div>
+          <h3>交付 — 落地执行</h3>
+        </div>
+        <div class="phase-question">"如何把方案变成可执行的开发任务？"</div>
+        <ul class="skill-list">
+          <li class="skill-tag"><span class="cmd">/prd</span></li>
+          <li class="skill-tag"><span class="cmd">/user-stories</span></li>
+          <li class="skill-tag"><span class="cmd">/acceptance-criteria</span></li>
+          <li class="skill-tag"><span class="cmd">/edge-cases</span></li>
+          <li class="skill-tag"><span class="cmd">/launch-checklist</span></li>
+        </ul>
+        <div class="card-footer">
+          <span class="output-label">产出：PRD · 用户故事 · 验收标准</span>
+          <span class="card-link" style="color:var(--color-primary);">查看 →</span>
+        </div>
+      </a>
+
+      <!-- 衡量 -->
+      <a href="measure.html" class="phase-card" style="text-decoration:none;color:inherit;">
+        <div class="phase-card-header">
+          <div class="phase-card-icon phase-measure">📊</div>
+          <h3>衡量 — 验证效果</h3>
+        </div>
+        <div class="phase-question">"怎么知道我们做对了？数据怎么说？"</div>
+        <ul class="skill-list">
+          <li class="skill-tag"><span class="cmd">/experiment-design</span></li>
+          <li class="skill-tag"><span class="cmd">/instrumentation-spec</span></li>
+          <li class="skill-tag"><span class="cmd">/dashboard-requirements</span></li>
+          <li class="skill-tag"><span class="cmd">/experiment-results</span></li>
+          <li class="skill-tag"><span class="cmd">/okr-grader</span></li>
+        </ul>
+        <div class="card-footer">
+          <span class="output-label">产出：实验方案 · 数据看板</span>
+          <span class="card-link" style="color:var(--color-primary);">查看 →</span>
+        </div>
+      </a>
+
+      <!-- 迭代 -->
+      <a href="iterate.html" class="phase-card" style="text-decoration:none;color:inherit;">
+        <div class="phase-card-header">
+          <div class="phase-card-icon phase-iterate">🔄</div>
+          <h3>迭代 — 持续优化</h3>
+        </div>
+        <div class="phase-question">"从这次经历中学到了什么，下一步做什么？"</div>
+        <ul class="skill-list">
+          <li class="skill-tag"><span class="cmd">/retrospective</span></li>
+          <li class="skill-tag"><span class="cmd">/lessons-log</span></li>
+          <li class="skill-tag"><span class="cmd">/refinement-notes</span></li>
+          <li class="skill-tag"><span class="cmd">/pivot-decision</span></li>
+        </ul>
+        <div class="card-footer">
+          <span class="output-label">产出：复盘记录 · Lessons Log</span>
+          <span class="card-link" style="color:var(--color-primary);">查看 →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Quick Start -->
+  <section class="container">
+    <div class="quick-start">
+      <h2>⚡ 快速上手</h2>
+      <div class="quick-start-grid">
+        <div class="quick-start-item">
+          <span class="qs-command">日常需求</span>
+          <span class="qs-desc">/prd + /user-stories 快速出需求文档</span>
+        </div>
+        <div class="quick-start-item">
+          <span class="qs-command">模糊想法</span>
+          <span class="qs-desc">prd-writer 概念版引导，先对齐方向</span>
+        </div>
+        <div class="quick-start-item">
+          <span class="qs-command">Vibe Coding</span>
+          <span class="qs-desc">vibe-prd-writer 出可执行 PRD/ 文件夹</span>
+        </div>
+        <div class="quick-start-item">
+          <span class="qs-command">AI 产品</span>
+          <span class="qs-desc">ai-agent-prd-writer 专项处理</span>
+        </div>
+        <div class="quick-start-item">
+          <span class="qs-command">开会</span>
+          <span class="qs-desc">/meeting-brief → /meeting-recap</span>
+        </div>
+        <div class="quick-start-item">
+          <span class="qs-command">定目标</span>
+          <span class="qs-desc">/okr-writer → /okr-grader</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>PM Workflow — 产品经理工作流参考</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

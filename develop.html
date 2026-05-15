@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开发 — PM Workflow</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        PM Workflow
+      </a>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="discover.html">发现</a></li>
+        <li><a href="define.html">定义</a></li>
+        <li><a href="develop.html">开发</a></li>
+        <li><a href="deliver.html">交付</a></li>
+        <li><a href="measure.html">衡量</a></li>
+        <li><a href="iterate.html">迭代</a></li>
+        <li><a href="tools.html">工具</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a>
+        <span>/</span>
+        <span>开发</span>
+      </div>
+      <h1>💡 开发 — 探索方案</h1>
+      <div class="subtitle">明确问题之后，探索可能的解决方案，评估技术可行性和设计决策，为落地执行做准备。</div>
+    </div>
+
+    <section>
+      <h2 class="section-title">这个阶段回答的关键问题</h2>
+      <div class="quick-start" style="margin-bottom:32px;">
+        <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:1rem;color:var(--color-text-secondary);">解决方案长什么样？核心逻辑是什么？</li>
+          <li style="font-size:1rem;color:var(--color-text-secondary);">技术路线是否可行？有哪些关键依赖？</li>
+          <li style="font-size:1rem;color:var(--color-text-secondary);">关键设计决策是什么？为什么这么选？</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">技能工具</h2>
+      <div class="skill-cards">
+        <div class="skill-card">
+          <h3>📝 方案简述</h3>
+          <span class="skill-cmd">/solution-brief</span>
+          <div class="skill-desc">一页纸的方案 pitch。清晰描述解决方案的核心逻辑、目标用户、关键功能和非功能需求。</div>
+          <div class="skill-when"><strong>使用时机：</strong>问题定义完成后，需要产出可评估的解决方案时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🔬 技术探索总结</h3>
+          <span class="skill-cmd">/spike-summary</span>
+          <div class="skill-desc">技术预研和探索的记录。记录实验目标、方法、结果和推荐方案，帮助团队做技术决策。</div>
+          <div class="skill-when"><strong>使用时机：</strong>技术方案不确定、需要花时间研究再决定时</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🏗️ 架构决策记录</h3>
+          <span class="skill-cmd">/adr</span>
+          <div class="skill-desc">Architecture Decision Record（Nygard 格式）。记录每个关键架构决策的上下文、方案对比和最终选择。</div>
+          <div class="skill-when"><strong>使用时机：</strong>做出重要技术或架构决策时，需要记录决策原因供日后追溯</div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🎨 设计决策说明</h3>
+          <span class="skill-cmd">/design-rationale</span>
+          <div class="skill-desc">记录设计决策背后的原因——为什么选这个方案而不是另一个，基于什么数据和原则。</div>
+          <div class="skill-when"><strong>使用时机：</strong>做了重要的交互或体验设计决策，需要让团队理解"为什么"时</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">产出物</h2>
+      <div class="output-list">
+        <div class="output-item"><span class="output-icon phase-develop">📄</span>方案简述文档</div>
+        <div class="output-item"><span class="output-icon phase-develop">📄</span>技术探索报告</div>
+        <div class="output-item"><span class="output-icon phase-develop">📄</span>架构决策记录（ADR）</div>
+        <div class="output-item"><span class="output-icon phase-develop">📄</span>设计决策说明</div>
+      </div>
+    </section>
+
+    <div class="phase-nav">
+      <a href="define.html">
+        <span class="nav-label">← 上一步</span>
+        <span class="nav-title">定义 — 框定问题</span>
+      </a>
+      <a href="deliver.html">
+        <span class="nav-label">下一步 →</span>
+        <span class="nav-title">交付 — 落地执行</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>PM Workflow — 产品经理工作流参考</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
