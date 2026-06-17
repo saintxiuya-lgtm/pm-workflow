@@ -7,22 +7,24 @@
 
   // --- Init ---
   function init() {
-    var searchToggle = document.querySelector('.search-toggle');
     var searchModal  = document.getElementById('search-modal');
     var searchInput  = document.getElementById('search-input');
     var searchResults = document.getElementById('search-results');
     var searchClose  = document.querySelector('.search-close');
 
-    if (!searchToggle || !searchModal) return;
+    if (!searchModal) return;
 
     // Wait for search data to be available
     function getIndex() {
       return window.SEARCH_INDEX || [];
     }
 
-    searchToggle.addEventListener('click', function () {
-      searchModal.classList.add('open');
-      setTimeout(function () { searchInput?.focus(); }, 100);
+    // Open search - bind all trigger buttons
+    document.querySelectorAll('.search-toggle, .sidebar-action-btn[data-action="search"]').forEach(function(btn) {
+      btn.addEventListener('click', function () {
+        searchModal.classList.add('open');
+        setTimeout(function () { searchInput?.focus(); }, 100);
+      });
     });
 
     searchClose?.addEventListener('click', function () {
