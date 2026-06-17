@@ -10,36 +10,31 @@ eleventyComputed:
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <h1>产品经理的 <span>完整工作流</span></h1>
-    <p>一个想法到一款产品，六阶段闭环。每个阶段回答一个关键问题，配套可落地的工具和方法。</p>
-    <div class="hero-flow">
-      {% for phase in phases %}
-      <div class="hero-flow-item"><span class="phase-dot {{ phase.colorClass }}" aria-hidden="true">{{ phase.name[0] }}</span><span class="phase-label">{{ phase.name }}</span></div>
-      {% if not loop.last %}<span class="hero-flow-arrow" aria-hidden="true">→</span>{% endif %}
-      {% endfor %}
-    </div>
+    <p class="hero-eyebrow">一个产品经理的笔记</p>
+    <h1>工作流参考</h1>
+    <p class="hero-desc">
+      从想法到上线的六个阶段，每个阶段回答一个关键问题。<br>
+      配套的工具和方法按场景整理，需要时来查就行。
+    </p>
+    <p class="hero-meta">共 6 个阶段 · 40+ 个技能 · 14 个工具</p>
   </div>
 </section>
 
-<!-- Phase Grid -->
+<!-- Phase List (narrow, reading-friendly) -->
 <section class="container">
-  <div class="phase-grid">
+  <div class="phase-list">
     {% for phase in phases %}
-    <a href="/{{ phase.id }}/" class="phase-card" data-phase="{{ phase.id }}">
-      <div class="phase-card-header">
-        <div class="phase-card-icon {{ phase.colorClass }}" aria-hidden="true">{{ phase.emoji }}</div>
-        <h3>{{ phase.name }} — {{ phase.short }}</h3>
+    <a href="/{{ phase.id }}/" class="phase-list-item" data-phase="{{ phase.id }}">
+      <span class="phase-list-num">{{ loop.index }}</span>
+      <div class="phase-list-body">
+        <div class="phase-list-header">
+          <h3>{{ phase.name }}</h3>
+          <span class="phase-list-short">{{ phase.short }}</span>
+        </div>
+        <p class="phase-list-question">「{{ phase.question }}」</p>
+        <p class="phase-list-output">产出：{{ phase.outputs | join(" · ") }}</p>
       </div>
-      <div class="phase-question">「{{ phase.question }}」</div>
-      <ul class="skill-list">
-        {% for skill in phase.skills %}
-        <li class="skill-tag"><span class="cmd">{{ skill.cmd }}</span></li>
-        {% endfor %}
-      </ul>
-      <div class="card-footer">
-        <span class="output-label">产出：{{ phase.outputs | join(" · ") }}</span>
-        <span class="card-link">查看 →</span>
-      </div>
+      <span class="phase-list-arrow" aria-hidden="true">→</span>
     </a>
     {% endfor %}
   </div>
@@ -48,11 +43,11 @@ eleventyComputed:
 <!-- Quick Start -->
 <section class="container">
   <div class="quick-start">
-    <h2>⚡ 快速上手</h2>
+    <h2>常见场景</h2>
     <div class="quick-start-grid">
       <div class="quick-start-item">
         <span class="qs-command">日常需求</span>
-        <span class="qs-desc">/prd + /user-stories 快速出需求文档</span>
+        <span class="qs-desc"><code>/prd</code> + <code>/user-stories</code> 快速出需求文档</span>
       </div>
       <div class="quick-start-item">
         <span class="qs-command">模糊想法</span>
@@ -60,7 +55,7 @@ eleventyComputed:
       </div>
       <div class="quick-start-item">
         <span class="qs-command">Vibe Coding</span>
-        <span class="qs-desc">vibe-prd-writer 出可执行 PRD/ 文件夹</span>
+        <span class="qs-desc">vibe-prd-writer 出可执行 PRD</span>
       </div>
       <div class="quick-start-item">
         <span class="qs-command">AI 产品</span>
@@ -68,11 +63,11 @@ eleventyComputed:
       </div>
       <div class="quick-start-item">
         <span class="qs-command">开会</span>
-        <span class="qs-desc">/meeting-brief → /meeting-recap</span>
+        <span class="qs-desc"><code>/meeting-brief</code> → <code>/meeting-recap</code></span>
       </div>
       <div class="quick-start-item">
         <span class="qs-command">定目标</span>
-        <span class="qs-desc">/okr-writer → /okr-grader</span>
+        <span class="qs-desc"><code>/okr-writer</code> → <code>/okr-grader</code></span>
       </div>
     </div>
   </div>
