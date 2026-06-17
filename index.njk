@@ -4,28 +4,19 @@ title: "首页"
 {% extends "base.njk" %}
 
 {% block content %}
-<div class="meta-block">
-  <div class="eyebrow">参考手册</div>
+<div class="home-header">
   <h1>产品经理工作流</h1>
-  <div class="desc">覆盖从发现问题到迭代优化的完整闭环，每个阶段配有可直接使用的 AI 技能。</div>
+  <p>从发现问题到迭代优化的完整闭环，每个阶段配有可直接使用的 AI 技能。</p>
   <div class="meta">6 个阶段 · 40+ 技能 · 14 个工具</div>
 </div>
 
-<section style="margin-bottom:40px;">
-  <h2 style="font-size:1.0625rem;font-weight:600;color:var(--ink);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border);">阶段</h2>
-  <div class="phase-list">
+<section>
+  <div class="phase-grid">
     {%- for p in phases %}
-    <a href="/{{ p.id }}/" class="phase-list-item">
-      <span class="phase-list-num dot-{{ p.id }}" style="background:var(--clr-{{ p.id }});"></span>
-      <div class="phase-list-body">
-        <div class="phase-list-header">
-          <h3>{{ p.name }}</h3>
-          <span class="phase-list-short">{{ p.short }}</span>
-        </div>
-        <div class="phase-list-question">{{ p.question }}</div>
-        <div class="phase-list-output">产出：{{ p.output }}</div>
-      </div>
-      <span class="phase-list-arrow">→</span>
+    <a href="/{{ p.id }}/" class="phase-card {{ p.id }}">
+      <h2>{{ p.name }}</h2>
+      <div class="question">{{ p.question }}</div>
+      <div class="output">产出：{{ p.output }}</div>
     </a>
     {%- endfor %}
   </div>
@@ -33,22 +24,22 @@ title: "首页"
 
 <div class="quick-start">
   <h2>快速上手</h2>
-  <div class="quick-start-grid">
-    <div class="quick-start-item">
-      <span class="qs-command">/interview-synthesis</span>
-      <span class="qs-desc">日常需求评审，输入原始访谈记录</span>
+  <div class="quick-grid">
+    <div class="quick-item">
+      <code>/interview-synthesis</code>
+      <span>日常需求评审，输入原始访谈记录</span>
     </div>
-    <div class="quick-start-item">
-      <span class="qs-command">/prd</span>
-      <span class="qs-desc">写 PRD，vibe coding 场景</span>
+    <div class="quick-item">
+      <code>/prd</code>
+      <span>写 PRD，vibe coding 场景</span>
     </div>
-    <div class="quick-start-item">
-      <span class="qs-command">/vibe-prd-writer</span>
-      <span class="qs-desc">完整项目规范，直接喂给 Claude Code</span>
+    <div class="quick-item">
+      <code>/vibe-prd-writer</code>
+      <span>完整项目规范，直接喂给 Claude Code</span>
     </div>
-    <div class="quick-start-item">
-      <span class="qs-command">/meeting-to-action</span>
-      <span class="qs-desc">整理会议纪要，提取行动项</span>
+    <div class="quick-item">
+      <code>/meeting-to-action</code>
+      <span>整理会议纪要，提取行动项</span>
     </div>
   </div>
 </div>

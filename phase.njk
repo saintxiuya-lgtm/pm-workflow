@@ -15,55 +15,53 @@ description: "{{ phase.question }} — {{ phase.name }}阶段，产出：{{ phas
 {% extends "base.njk" %}
 
 {% block content %}
-<div class="page-header">
-  <h1>{{ phase.icon | default("📄") }} {{ phase.name }}</h1>
-  <div class="subtitle">{{ phase.question }}</div>
+<div class="phase-header {{ p.id }}">
+  <h1>{{ phase.name }}</h1>
+  <div class="question">{{ phase.question }}</div>
   {% if phase.why %}
-  <div class="page-desc">{{ phase.why }}</div>
+  <div class="why">{{ phase.why }}</div>
   {% endif %}
 </div>
 
 {% if phase.skills %}
-<div class="phase-section">
-  <h2>技能（{{ phase.skills | length }} 个）</h2>
-  <div class="skill-list">
+<section>
+  <div class="section-heading">技能（{{ phase.skills | length }} 个）</div>
+  <ul class="skill-list">
     {% for s in phase.skills %}
-    <div class="skill-item">
-      <div class="skill-item-header">
-        {% if s.cmd %}<code class="skill-item-cmd">{{ s.cmd }}</code>{% endif %}
-        <span class="skill-item-name">{{ s.name }}</span>
-      </div>
-      {% if s.desc %}<div class="skill-item-desc">{{ s.desc }}</div>{% endif %}
-      {% if s.when %}<div class="skill-item-when">{{ s.when }}</div>{% endif %}
-    </div>
+    <li class="skill-item">
+      {% if s.cmd %}<code class="skill-cmd">{{ s.cmd }}</code>{% endif %}
+      <span class="skill-name">{{ s.name }}</span>
+      {% if s.desc %}<div class="skill-desc">{{ s.desc }}</div>{% endif %}
+      {% if s.when %}<div class="skill-when">{{ s.when }}</div>{% endif %}
+    </li>
     {% endfor %}
-  </div>
-</div>
+  </ul>
+</section>
 {% endif %}
 
 {% if phase.output %}
-<div class="phase-section">
-  <h2>产出物</h2>
+<section>
+  <div class="section-heading">产出物</div>
   <ul class="output-list">
     {% for o in phase.output | split(",") %}
     <li>{{ o | trim }}</li>
     {% endfor %}
   </ul>
-</div>
+</section>
 {% endif %}
 
 {% if phase.tips %}
-<div class="phase-section">
-  <h2>提示</h2>
-  <div class="tip-list">
+<section>
+  <div class="section-heading">提示</div>
+  <ul class="skill-list">
     {% for t in phase.tips %}
-    <div class="tip-item">
-      {% if t.cmd %}<code class="tip-skill">{{ t.cmd }}</code>{% endif %}
-      <span class="tip-desc">{{ t.text }}</span>
-    </div>
+    <li class="skill-item">
+      {% if t.cmd %}<code class="skill-cmd">{{ t.cmd }}</code>{% endif %}
+      <span class="skill-desc">{{ t.text }}</span>
+    </li>
     {% endfor %}
-  </div>
-</div>
+  </ul>
+</section>
 {% endif %}
 
 {% if phase.prev or phase.next %}
@@ -75,7 +73,7 @@ description: "{{ phase.question }} — {{ phase.name }}阶段，产出：{{ phas
   </a>
   {% endif %}
   {% if phase.next %}
-  <a href="/{{ phase.next.id }}/" style="margin-left:auto;text-align:right;">
+  <a href="/{{ phase.next.id }}/" style="text-align:right;margin-left:auto;">
     <div class="nav-label">下一阶段 →</div>
     <div class="nav-title">{{ phase.next.name }}</div>
   </a>
@@ -84,9 +82,9 @@ description: "{{ phase.question }} — {{ phase.name }}阶段，产出：{{ phas
 {% endif %}
 
 {% if phase.doc %}
-<details style="margin-top:24px;font-size:0.875rem;color:var(--ink-faint);">
+<details style="margin-top:24px;font-size:0.875rem;color:var(--text-faint);">
   <summary style="cursor:pointer;">查看原始数据</summary>
-  <pre style="margin-top:8px;padding:16px;background:var(--code-bg);border-radius:4px;overflow:auto;font-size:0.8125rem;">{{ phase | dump(2) }}</pre>
+  <pre>{{ phase | dump(2) }}</pre>
 </details>
 {% endif %}
 {% endblock %}

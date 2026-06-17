@@ -1,14 +1,15 @@
 /* ============================================
-   PM Workflow — 主脚本（侧边栏布局）
+   PM Workflow — main.js
+   Theme toggle + smooth scroll
    ============================================ */
 
 (function () {
   'use strict';
 
-  // --- Theme ---
+  /* --- Theme --- */
   var STORAGE_KEY = 'pm-workflow-theme';
 
-  function getPreferredTheme() {
+  function getPreferedTheme() {
     var stored = localStorage.getItem(STORAGE_KEY);
     if (stored) return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -18,66 +19,48 @@
     document.documentElement.setAttribute('data-theme', theme);
   }
 
-  function updateThemeToggleText(theme) {
-    var btn = document.querySelector('.theme-toggle');
-    if (btn) {
+  function updateThemeBtnText(theme) {
+    var btns = document.querySelectorAll('.theme-toggle');
+    btns.forEach(function (btn) {
       btn.textContent = theme === 'dark' ? '亮色' : '暗色';
-    }
+    });
   }
 
   function toggleTheme() {
-    var current = document.documentElement.getAttribute('data-theme');
+    var current = document.documentElement.getAttribute('data-theme') || 'light';
     var next = current === 'dark' ? 'light' : 'dark';
-    localStorage.setItem(STORAGE_KEY, next);
     applyTheme(next);
-    updateThemeToggleText(next);
+    localStorage.setItem(STORAGE_KEY, next);
+    updateThemeBtnText(next);
   }
 
-  // Init theme
-  var currentTheme = getPreferredTheme();
-  applyTheme(currentTheme);
-  document.addEventListener('DOMContentLoaded', function () {
-    updateThemeToggleText(currentTheme);
-  });
+  /* --- Init --- */
+  function init() {
+    var theme = getPreferedTheme();
+    applyTheme(theme);
+    updateThemeBtnText(theme);
 
-  // Theme toggle button
-  document.addEventListener('click', function (e) {
-    if (e.target && e.target.classList.contains('theme-toggle')) {
-      toggleTheme();
-    }
-  });
+    // Theme toggle buttons (topnav)
+    var toggles = document.querySelectorAll('.theme-toggle');
+    toggles.forEach(function (btn) {
+      btn.addEventListener('click', toggleTheme);
+    });
 
-  // --- Sidebar toggle (mobile) ---
-  document.addEventListener('click', function (e) {
-    var toggle = e.target.closest('#menu-toggle');
-    if (!toggle) return;
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  }
 
-    var sidebar = document.getElementById('sidebar');
-    if (!sidebar) return;
-
-    var isOpen = sidebar.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-
-  // Close sidebar on click outside (mobile)
-  document.addEventListener('click', function (e) {
-    if (window.innerWidth > 960) return;
-    var sidebar = document.getElementById('sidebar');
-    var toggle = document.getElementById('menu-toggle');
-    if (!sidebar || !sidebar.classList.contains('open')) return;
-    if (e.target.closest('#sidebar') || e.target.closest('#menu-toggle')) return;
-    sidebar.classList.remove('open');
-    if (toggle) toggle.setAttribute('aria-expanded', 'false');
-  });
-
-  // --- Smooth scroll for anchor links ---
-  document.addEventListener('click', function (e) {
-    var link = e.target.closest('a[href^="#"]');
-    if (!link) return;
-    var target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
