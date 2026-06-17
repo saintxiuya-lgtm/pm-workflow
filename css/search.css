@@ -2,24 +2,50 @@
    PM Workflow — 搜索样式
    ============================================ */
 
-/* --- Search Toggle --- */
+/* --- Search Toggle (nav button) --- */
 .search-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
   border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-sm);
   background: none;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  padding: 4px 10px;
   transition: all 0.2s;
   margin-left: 4px;
+  white-space: nowrap;
 }
 .search-toggle:hover {
   background: var(--color-gray-100);
   border-color: var(--color-gray-300);
+  color: var(--color-gray-800);
+}
+
+/* --- Theme Toggle (nav button) --- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  background: none;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  padding: 4px 10px;
+  transition: all 0.2s;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+.theme-toggle:hover {
+  background: var(--color-gray-100);
+  border-color: var(--color-gray-300);
+  color: var(--color-gray-800);
 }
 
 /* --- Search Modal --- */
@@ -54,11 +80,6 @@
   padding: 16px 20px;
   border-bottom: 1px solid var(--color-gray-100);
 }
-.search-input-wrap .search-icon {
-  color: var(--color-gray-400);
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
 .search-input-wrap input {
   flex: 1;
   border: none;
@@ -83,14 +104,17 @@
 .search-close {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 0.8125rem;
   cursor: pointer;
   color: var(--color-gray-400);
-  padding: 4px;
+  padding: 4px 8px;
   line-height: 1;
+  border-radius: 4px;
+  transition: all 0.15s;
 }
 .search-close:hover {
   color: var(--color-text);
+  background: var(--color-gray-100);
 }
 
 /* --- Search Results --- */
@@ -118,14 +142,15 @@
 .search-result-item:hover {
   background: var(--color-gray-50);
 }
-.search-result-icon {
-  font-size: 1.3rem;
+.search-result-type {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  padding: 2px 8px;
+  border-radius: 3px;
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 2px;
 }
 .search-result-body {
   flex: 1;
@@ -140,12 +165,18 @@
 .search-result-cmd {
   font-family: var(--font-mono);
   font-size: 0.8rem;
+  font-weight: 600;
   color: var(--color-primary);
   background: var(--color-primary-bg);
   padding: 1px 6px;
   border-radius: 3px;
   display: inline-block;
   margin-bottom: 4px;
+}
+.search-result-meta {
+  font-size: 0.75rem;
+  color: var(--color-gray-400);
+  margin-top: 2px;
 }
 .search-result-desc {
   font-size: 0.85rem;
