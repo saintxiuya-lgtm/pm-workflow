@@ -14,9 +14,16 @@ title: "首页"
   <div class="phase-grid">
     {%- for p in phases %}
     <a href="/{{ p.id }}/" class="phase-card {{ p.id }}">
+      <span class="card-icon">{{ p.emoji }}</span>
       <h2>{{ p.name }}</h2>
       <div class="question">{{ p.question }}</div>
-      <div class="output">产出：{{ p.output }}</div>
+      <div class="output">产出：{{ p.outputs | join(" · ") }}</div>
+      <div class="card-skills-label">阶段技能</div>
+      <div class="card-skills">
+        {%- for s in p.skills %}
+        <code>{{ s.cmd }} {{ s.title }}</code>
+        {%- endfor %}
+      </div>
     </a>
     {%- endfor %}
   </div>

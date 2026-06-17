@@ -56,6 +56,9 @@
         }
       });
     });
+
+    // Glass mode
+    initGlassMode();
   }
 
   if (document.readyState === 'loading') {
