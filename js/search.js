@@ -75,9 +75,9 @@
 
     var html = '<div class="search-results-list">';
     results.forEach(function (item) {
-      var icon = item.type === 'skill' ? '📌' : item.type === 'tool' ? '🛠️' : item.type === 'phase' ? (item.icon || '📄') : '📄';
+      var typeLabel = item.type === 'skill' ? '技能' : item.type === 'tool' ? '工具' : item.type === 'phase' ? '阶段' : '页面';
       html += '<a href="' + (item.href || '#') + '" class="search-result-item">';
-      html += '  <span class="search-result-icon">' + icon + '</span>';
+      html += '  <span class="search-result-type">' + typeLabel + '</span>';
       html += '  <div class="search-result-body">';
       html += '    <div class="search-result-title">' + escapeHtml(item.title) + '</div>';
       if (item.cmd) {

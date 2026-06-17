@@ -1,7 +1,7 @@
 ---
 permalink: tools/index.html
 eleventyComputed:
-  title: "跨阶段工具集"
+  title: "跨阶段工具"
   description: "这些工具不属于某一个特定阶段，而是贯穿产品经理的日常工作，随时可用。"
   breadcrumb:
     - name: "工具"
@@ -10,27 +10,28 @@ eleventyComputed:
 {% extends "_includes/base.njk" %}
 
 {% block content %}
-<div class="container">
+<div class="container phase-page">
   <div class="page-header">
     <div class="breadcrumb">
       <a href="/">首页</a>
       <span aria-hidden="true">/</span>
       <span>工具</span>
     </div>
-    <h1><span aria-hidden="true">🧰</span> 跨阶段工具集</h1>
-    <div class="subtitle">这些工具不属于某一个特定阶段，而是贯穿产品经理的日常工作，随时可用。</div>
+    <h1>跨阶段工具</h1>
+    <p class="page-desc">这些工具不属于某一个特定阶段，而是贯穿产品经理的日常工作，随时可用。</p>
   </div>
 
   {% for section in tools.sections %}
-  <section>
-    <h2 class="section-title">{{ section.title }}</h2>
-    <div class="tools-grid">
+  <section class="phase-section">
+    <h2>{{ section.title }}</h2>
+    <div class="skill-list">
       {% for tool in section.items %}
-      <div class="tool-card">
-        <div class="tool-icon" aria-hidden="true">{{ tool.icon }}</div>
-        <h3>{{ tool.title }}</h3>
-        <div class="tool-cmd">{{ tool.cmd }}</div>
-        <div class="tool-desc">{{ tool.desc }}</div>
+      <div class="skill-item">
+        <div class="skill-item-header">
+          <span class="skill-item-cmd">{{ tool.cmd }}</span>
+          <span class="skill-item-name">{{ tool.title }}</span>
+        </div>
+        <p class="skill-item-desc">{{ tool.desc }}</p>
       </div>
       {% endfor %}
     </div>
