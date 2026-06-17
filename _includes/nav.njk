@@ -1,0 +1,17 @@
+<nav class="site-nav" role="navigation" aria-label="主导航">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      PM Workflow
+    </a>
+    <button class="nav-toggle" aria-label="菜单" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav-links">
+      {% for item in site.navItems %}
+      <li><a href="{{ item.href }}"{% if page.url == item.href %} class="active" aria-current="page"{% endif %}>{{ item.label }}</a></li>
+      {% endfor %}
+      <li><button class="theme-toggle" aria-label="切换暗色模式" title="切换暗色模式">🌙</button></li>
+    </ul>
+  </div>
+</nav>

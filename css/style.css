@@ -401,10 +401,6 @@ img {
 }
 
 /* --- Section --- */
-.section {
-  padding: 48px 0;
-}
-
 .section-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -603,48 +599,6 @@ img {
   line-height: 1.6;
 }
 
-/* --- Workflow Section (Home) --- */
-.workflow-steps {
-  margin-bottom: 48px;
-}
-
-.workflow-step {
-  display: flex;
-  gap: 20px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--color-gray-100);
-}
-
-.workflow-step:last-child {
-  border-bottom: none;
-}
-
-.workflow-step .step-num {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 0.875rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.workflow-step .step-content h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.workflow-step .step-content p {
-  font-size: 0.875rem;
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-}
-
 /* --- Quick Start --- */
 .quick-start {
   background: var(--color-white);
@@ -796,17 +750,110 @@ img {
   }
 }
 
-/* --- Utility --- */
-.mt-1 { margin-top: 8px; }
-.mt-2 { margin-top: 16px; }
-.mt-3 { margin-top: 24px; }
-.mt-4 { margin-top: 32px; }
-.mb-1 { margin-bottom: 8px; }
-.mb-2 { margin-bottom: 16px; }
-.mb-3 { margin-bottom: 24px; }
-.mb-4 { margin-bottom: 32px; }
+/* --- Accessibility --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 200;
+  padding: 8px 16px;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 8px;
+}
 
-.text-center { text-align: center; }
+/* --- Dark Mode --- */
+[data-theme="dark"] {
+  --color-primary: #818CF8;
+  --color-primary-light: #6366F1;
+  --color-primary-dark: #A5B4FC;
+  --color-primary-bg: #1E1B4B;
+  --color-accent: #38BDF8;
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+
+  --color-gray-50: #1F2937;
+  --color-gray-100: #374151;
+  --color-gray-200: #4B5563;
+  --color-gray-300: #6B7280;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #D1D5DB;
+  --color-gray-600: #E5E7EB;
+  --color-gray-700: #F3F4F6;
+  --color-gray-800: #F9FAFB;
+  --color-gray-900: #FFFFFF;
+
+  --color-white: #111827;
+  --color-bg: #0F172A;
+  --color-text: #F3F4F6;
+  --color-text-secondary: #9CA3AF;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -1px rgba(0,0,0,0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5), 0 4px 6px -2px rgba(0,0,0,0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.6), 0 10px 10px -5px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .site-nav {
+  background: rgba(17, 24, 39, 0.95);
+}
+
+[data-theme="dark"] .phase-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5), 0 4px 6px -2px rgba(0,0,0,0.3);
+}
+
+/* --- Theme Toggle --- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+  margin-left: 8px;
+}
+.theme-toggle:hover {
+  background: var(--color-gray-100);
+  border-color: var(--color-gray-300);
+}
+
+/* --- Question List --- */
+.question-list {
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.question-list li {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+/* --- Quick Start Wide --- */
+.quick-start-grid--wide {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* --- Phase Card Color Bars --- */
+.phase-card[data-phase="discover"]::before { background: #6366F1; }
+.phase-card[data-phase="define"]::before { background: #8B5CF6; }
+.phase-card[data-phase="develop"]::before { background: #0EA5E9; }
+.phase-card[data-phase="deliver"]::before { background: #10B981; }
+.phase-card[data-phase="measure"]::before { background: #F59E0B; }
+.phase-card[data-phase="iterate"]::before { background: #EF4444; }
 
 /* --- Print --- */
 @media print {

@@ -1,0 +1,151 @@
+[
+  {
+    "id": "discover",
+    "name": "发现",
+    "emoji": "🔍",
+    "short": "找对问题",
+    "colorClass": "phase-discover",
+    "description": "做对的产品比把产品做对更重要。这个阶段的目标是确认我们在解决一个真实存在的问题。",
+    "question": "我们真的在解决一个真实存在的问题吗？",
+    "questions": [
+      "这个需求真实存在吗？用户现在怎么解决它？",
+      "市场上有哪些已有方案？我们有什么差异化空间？",
+      "谁是最重要的利益相关方？他们的期望是什么？"
+    ],
+    "skills": [
+      {"icon": "🎙️", "title": "访谈综合", "cmd": "/interview-synthesis", "desc": "把用户研究原始数据转化为可执行的洞察。从多个访谈中识别模式、提炼主题、关联解决方案。", "when": "完成用户访谈后，需要综合多份访谈记录提炼洞察时"},
+      {"icon": "🏢", "title": "竞品分析", "cmd": "/competitive-analysis", "desc": "系统化分析市场格局，找到差异化机会。覆盖直接竞品、间接竞品和替代方案。", "when": "进入新市场前、规划新功能时、需要了解竞争格局时"},
+      {"icon": "👥", "title": "利益相关方总结", "cmd": "/stakeholder-summary", "desc": "识别关键利益相关方，理解他们的关注点、期望和影响力，为后续对齐和管理打好基础。", "when": "项目启动初期，需要了解谁有话语权、谁的诉求需要被考虑时"}
+    ],
+    "outputs": ["用户研究报告", "竞品分析报告", "利益相关方地图"],
+    "prev": null,
+    "next": "define"
+  },
+  {
+    "id": "define",
+    "name": "定义",
+    "emoji": "📋",
+    "short": "框定问题",
+    "colorClass": "phase-define",
+    "description": "把模糊的痛点转化为精确的问题陈述，确保团队对「解决什么问题」有一致的理解。",
+    "question": "这个问题到底是什么，我们如何衡量成功？",
+    "questions": [
+      "我们究竟在解决什么问题？问题陈述是什么？",
+      "哪些假设需要先验证才能放心推进？",
+      "用户真正想「雇用」产品完成什么任务（JTBD）？"
+    ],
+    "skills": [
+      {"icon": "🎯", "title": "问题陈述", "cmd": "/problem-statement", "desc": "把模糊的问题变成清晰、可行动的问题陈述。包含问题背景、影响范围和成功标准。", "when": "发现问题后，需要精确定义问题边界时"},
+      {"icon": "🧪", "title": "假设定义", "cmd": "/hypothesis", "desc": "定义可验证的假设，附带成功指标。用「我们相信…会…我们通过…验证」的结构化格式。", "when": "有解决方案方向但需要验证假设是否成立时"},
+      {"icon": "🌳", "title": "机会树", "cmd": "/opportunity-tree", "desc": "Teresa Torres 方法论的落地工具。从期望 outcome 出发，反向拆解用户机会点，系统性探索解决方案空间。", "when": "需要系统性拆解用户问题、探索多个解决方案方向时"},
+      {"icon": "📌", "title": "JTBD 画布", "cmd": "/jtbd-canvas", "desc": "Jobs to be Done 框架。理解用户真正「雇用」产品完成的任务，而非停留在功能层面。", "when": "需要理解用户深层动机、避免功能堆砌时"}
+    ],
+    "outputs": ["问题陈述文档", "假设清单（可验证）", "机会树 / JTBD 画布"],
+    "prev": "discover",
+    "next": "develop"
+  },
+  {
+    "id": "develop",
+    "name": "开发",
+    "emoji": "💡",
+    "short": "探索方案",
+    "colorClass": "phase-develop",
+    "description": "明确问题之后，探索可能的解决方案，评估技术可行性和设计决策，为落地执行做准备。",
+    "question": "什么样的方案能解决问题，技术上可行吗？",
+    "questions": [
+      "解决方案长什么样？核心逻辑是什么？",
+      "技术路线是否可行？有哪些关键依赖？",
+      "关键设计决策是什么？为什么这么选？"
+    ],
+    "skills": [
+      {"icon": "📝", "title": "方案简述", "cmd": "/solution-brief", "desc": "一页纸的方案 pitch。清晰描述解决方案的核心逻辑、目标用户、关键功能和非功能需求。", "when": "问题定义完成后，需要产出可评估的解决方案时"},
+      {"icon": "🔬", "title": "技术探索总结", "cmd": "/spike-summary", "desc": "技术预研和探索的记录。记录实验目标、方法、结果和推荐方案，帮助团队做技术决策。", "when": "技术方案不确定、需要花时间研究再决定时"},
+      {"icon": "🏗️", "title": "架构决策记录", "cmd": "/adr", "desc": "Architecture Decision Record（Nygard 格式）。记录每个关键架构决策的上下文、方案对比和最终选择。", "when": "做出重要技术或架构决策时，需要记录决策原因供日后追溯"},
+      {"icon": "🎨", "title": "设计决策说明", "cmd": "/design-rationale", "desc": "记录设计决策背后的原因——为什么选这个方案而不是另一个，基于什么数据和原则。", "when": "做了重要的交互或体验设计决策，需要让团队理解「为什么」时"}
+    ],
+    "outputs": ["方案简述文档", "技术探索报告", "架构决策记录（ADR）", "设计决策说明"],
+    "prev": "define",
+    "next": "deliver"
+  },
+  {
+    "id": "deliver",
+    "name": "交付",
+    "emoji": "🚀",
+    "short": "落地执行",
+    "colorClass": "phase-deliver",
+    "description": "把解决方案转化成可执行的开发任务。一份好的 PRD 让团队知道要做什么、为什么做、怎么算做完。",
+    "question": "如何把方案变成可执行的开发任务？",
+    "questions": [
+      "这个需求的完整背景和目标是什么？怎么衡量成功？",
+      "具体要做哪些功能？边界条件有哪些？",
+      "发布需要检查什么？怎么通知用户？"
+    ],
+    "skills": [
+      {"icon": "📄", "title": "产品需求文档", "cmd": "/deliver-prd", "desc": "全面的 PRD 生成，覆盖问题背景、成功指标、功能需求、技术考量、依赖和风险、时间线。", "when": "需要正式输出 PRD 给工程团队或 AI Agent 执行时"},
+      {"icon": "📖", "title": "用户故事", "cmd": "/user-stories", "desc": "INVEST 合规的用户故事，附带验收标准。把 PRD 中的需求拆解成可开发的独立故事。", "when": "PRD 完成后，需要将需求拆分为可执行的故事时"},
+      {"icon": "✅", "title": "验收标准", "cmd": "/acceptance-criteria", "desc": "Given/When/Then 格式的验收标准，确保开发和测试对「做完」有一致的理解。", "when": "需要为故事或功能定义测试验收条件时"},
+      {"icon": "⚠️", "title": "边界条件", "cmd": "/edge-cases", "desc": "系统化梳理错误状态、边界值和恢复路径。避免「99% 好用但 1% 崩溃」的发布事故。", "when": "需求定义阶段，需要深入排查边界和异常情况时"},
+      {"icon": "📋", "title": "发布清单", "cmd": "/launch-checklist", "desc": "完整的发布检查清单。覆盖功能、技术、运营、法务、市场等维度，确保不遗漏任何一步。", "when": "发布前倒数阶段，逐项确认是否准备就绪"},
+      {"icon": "📰", "title": "发布说明", "cmd": "/release-notes", "desc": "面向用户的发布说明。用用户能理解的语言描述新功能、修复和改进，保持品牌调性。", "when": "功能发布或版本更新时，需要通知用户"}
+    ],
+    "outputs": ["PRD（概念版 → 落地版）", "用户故事 + 验收标准", "边界条件清单", "发布检查清单", "Release Notes"],
+    "extraSection": {
+      "title": "PRD 工具选择",
+      "items": [
+        {"cmd": "prd-writer", "desc": "想法模糊时，先概念引导再展开细节"},
+        {"cmd": "vibe-prd-writer", "desc": "方向清晰后，产出可执行 PRD/ 文件夹"},
+        {"cmd": "ai-agent-prd-writer", "desc": "AI 产品（Agent/工具/对话型）专项处理"},
+        {"cmd": "/deliver-prd", "desc": "正式团队工程交接用标准 PRD 模板"}
+      ]
+    },
+    "prev": "develop",
+    "next": "measure"
+  },
+  {
+    "id": "measure",
+    "name": "衡量",
+    "emoji": "📊",
+    "short": "验证效果",
+    "colorClass": "phase-measure",
+    "description": "数据驱动决策。用实验和指标验证产品假设，而不是凭感觉判断「做对了没有」。",
+    "question": "怎么知道我们做对了？数据怎么说？",
+    "questions": [
+      "我们的假设到底成不成立？实验怎么设计？",
+      "需要埋哪些点？怎么定义数据指标？",
+      "实验结果告诉我们什么？下一步行动是什么？"
+    ],
+    "skills": [
+      {"icon": "🧪", "title": "实验设计", "cmd": "/experiment-design", "desc": "严谨的 A/B 测试和实验规划。定义假设、变量、样本量、成功标准和实验周期。", "when": "需要对某个功能或策略做定量验证时"},
+      {"icon": "📡", "title": "埋点规格", "cmd": "/instrumentation-spec", "desc": "定义需要追踪的事件、属性和维度。确保数据收集的完整性和一致性，避免「数据有了但没法分析」。", "when": "功能开发和实验启动前，需要定义数据收集方案时"},
+      {"icon": "📈", "title": "看板需求", "cmd": "/dashboard-requirements", "desc": "设计数据分析看板的结构和指标。明确看板的使用者、核心指标、数据源和刷新频率。", "when": "需要搭建数据分析看板来持续监控产品健康度时"},
+      {"icon": "📋", "title": "实验结果", "cmd": "/experiment-results", "desc": "记录实验的完整结果和学到的教训。包含实验概要、数据分析、统计显著性和行动建议。", "when": "实验结束后，需要系统化记录结果和决策时"},
+      {"icon": "🎯", "title": "OKR 评分", "cmd": "/okr-grader", "desc": "根据预定义类型（承诺型/愿景型/学习型等）对目标完成情况进行评分，拒绝事后改目标等误用行为。", "when": "OKR 周期结束时，需要客观评估完成情况"}
+    ],
+    "outputs": ["实验设计文档", "埋点规格说明书", "数据看板需求", "实验结果报告", "OKR 评分"],
+    "prev": "deliver",
+    "next": "iterate"
+  },
+  {
+    "id": "iterate",
+    "name": "迭代",
+    "emoji": "🔄",
+    "short": "持续优化",
+    "colorClass": "phase-iterate",
+    "description": "每个周期都是一次学习机会。复盘 > 沉淀 > 调整方向，让团队不断变强。",
+    "question": "从这次经历中学到了什么，下一步做什么？",
+    "questions": [
+      "这个周期做对了什么？做错了什么？可以改进什么？",
+      "值得沉淀的经验和教训是什么？",
+      "需要坚持还是转向？证据是什么？"
+    ],
+    "skills": [
+      {"icon": "🪞", "title": "团队复盘", "cmd": "/retrospective", "desc": "结构化的团队回顾，驱动实际改进。覆盖做得好、做得不好、可以改进的、行动清单。", "when": "版本发布后或 Sprint 结束时，团队需要系统性回顾反思时"},
+      {"icon": "📚", "title": "经验沉淀", "cmd": "/lessons-log", "desc": "把团队的经验转化为组织记忆。记录产生的背景、学到的东西、对未来的建议。", "when": "完成了重要里程碑或经历了重大事件后，有值得记录的经验教训时"},
+      {"icon": "📝", "title": "需求 Refinement", "cmd": "/refinement-notes", "desc": "记录 Backlog Refinement 的结果，包括故事拆解、重新估算、优先级调整和依赖识别。", "when": "Backlog 梳理会议后，需要记录调整结果和决策原因时"},
+      {"icon": "🔄", "title": "转向决策", "cmd": "/pivot-decision", "desc": "基于证据的坚持/转向决策框架。帮助团队理性评估当前方向是否正确，以及何时应该调整。", "when": "收到关键反馈或数据后，需要判断是否调整产品方向时"}
+    ],
+    "outputs": ["复盘记录 + 行动清单", "Lessons Log 经验库", "Refinement Notes", "Pivot 决策文档"],
+    "prev": "measure",
+    "next": null
+  }
+]

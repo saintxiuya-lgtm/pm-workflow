@@ -1,0 +1,80 @@
+---
+permalink: index.html
+eleventyComputed:
+  title: ""
+  description: "{{ site.description }}"
+---
+{% extends "_includes/base.njk" %}
+
+{% block content %}
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>产品经理的 <span>完整工作流</span></h1>
+    <p>一个想法到一款产品，六阶段闭环。每个阶段回答一个关键问题，配套可落地的工具和方法。</p>
+    <div class="hero-flow">
+      {% for phase in phases %}
+      <div class="hero-flow-item"><span class="phase-dot {{ phase.colorClass }}" aria-hidden="true">{{ phase.name[0] }}</span><span class="phase-label">{{ phase.name }}</span></div>
+      {% if not loop.last %}<span class="hero-flow-arrow" aria-hidden="true">→</span>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Phase Grid -->
+<section class="container">
+  <div class="phase-grid">
+    {% for phase in phases %}
+    <a href="/{{ phase.id }}/" class="phase-card" data-phase="{{ phase.id }}">
+      <div class="phase-card-header">
+        <div class="phase-card-icon {{ phase.colorClass }}" aria-hidden="true">{{ phase.emoji }}</div>
+        <h3>{{ phase.name }} — {{ phase.short }}</h3>
+      </div>
+      <div class="phase-question">「{{ phase.question }}」</div>
+      <ul class="skill-list">
+        {% for skill in phase.skills %}
+        <li class="skill-tag"><span class="cmd">{{ skill.cmd }}</span></li>
+        {% endfor %}
+      </ul>
+      <div class="card-footer">
+        <span class="output-label">产出：{{ phase.outputs | join(" · ") }}</span>
+        <span class="card-link">查看 →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Quick Start -->
+<section class="container">
+  <div class="quick-start">
+    <h2>⚡ 快速上手</h2>
+    <div class="quick-start-grid">
+      <div class="quick-start-item">
+        <span class="qs-command">日常需求</span>
+        <span class="qs-desc">/prd + /user-stories 快速出需求文档</span>
+      </div>
+      <div class="quick-start-item">
+        <span class="qs-command">模糊想法</span>
+        <span class="qs-desc">prd-writer 概念版引导，先对齐方向</span>
+      </div>
+      <div class="quick-start-item">
+        <span class="qs-command">Vibe Coding</span>
+        <span class="qs-desc">vibe-prd-writer 出可执行 PRD/ 文件夹</span>
+      </div>
+      <div class="quick-start-item">
+        <span class="qs-command">AI 产品</span>
+        <span class="qs-desc">ai-agent-prd-writer 专项处理</span>
+      </div>
+      <div class="quick-start-item">
+        <span class="qs-command">开会</span>
+        <span class="qs-desc">/meeting-brief → /meeting-recap</span>
+      </div>
+      <div class="quick-start-item">
+        <span class="qs-command">定目标</span>
+        <span class="qs-desc">/okr-writer → /okr-grader</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

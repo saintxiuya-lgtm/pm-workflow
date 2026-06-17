@@ -1,0 +1,20 @@
+---
+permalink: 404.html
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  title: "404 页面未找到"
+  description: "您访问的页面不存在。"
+---
+{% extends "_includes/base.njk" %}
+
+{% block content %}
+<div class="container">
+  <div class="page-header" style="text-align:center;padding-top:80px;">
+    <h1 style="font-size:4rem;margin-bottom:0;">404</h1>
+    <div class="subtitle" style="margin-top:12px;">页面找不到了，也许已经被移动或删除。</div>
+    <div style="margin-top:32px;">
+      <a href="/" style="display:inline-block;padding:12px 32px;background:var(--color-primary);color:white;border-radius:var(--radius-md);font-weight:600;font-size:1rem;text-decoration:none;">← 回到首页</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

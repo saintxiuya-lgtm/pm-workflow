@@ -1,0 +1,51 @@
+---
+permalink: tools/index.html
+eleventyComputed:
+  title: "跨阶段工具集"
+  description: "这些工具不属于某一个特定阶段，而是贯穿产品经理的日常工作，随时可用。"
+  breadcrumb:
+    - name: "工具"
+      href: "/tools/"
+---
+{% extends "_includes/base.njk" %}
+
+{% block content %}
+<div class="container">
+  <div class="page-header">
+    <div class="breadcrumb">
+      <a href="/">首页</a>
+      <span aria-hidden="true">/</span>
+      <span>工具</span>
+    </div>
+    <h1><span aria-hidden="true">🧰</span> 跨阶段工具集</h1>
+    <div class="subtitle">这些工具不属于某一个特定阶段，而是贯穿产品经理的日常工作，随时可用。</div>
+  </div>
+
+  {% for section in tools.sections %}
+  <section>
+    <h2 class="section-title">{{ section.title }}</h2>
+    <div class="tools-grid">
+      {% for tool in section.items %}
+      <div class="tool-card">
+        <div class="tool-icon" aria-hidden="true">{{ tool.icon }}</div>
+        <h3>{{ tool.title }}</h3>
+        <div class="tool-cmd">{{ tool.cmd }}</div>
+        <div class="tool-desc">{{ tool.desc }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <div class="phase-nav">
+    <a href="/">
+      <span class="nav-label">{{ tools.pageNav.prev.label }}</span>
+      <span class="nav-title">{{ tools.pageNav.prev.title }}</span>
+    </a>
+    <a href="/{{ phases[0].id }}/">
+      <span class="nav-label">{{ tools.pageNav.next.label }}</span>
+      <span class="nav-title">{{ tools.pageNav.next.title }}</span>
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{
+  "sections": [
+    {
+      "title": "基础工具",
+      "items": [
+        {"icon": "🎯", "title": "OKR 写作", "cmd": "/okr-writer", "desc": "起草目标与关键结果计划。五种 KR 类型（承诺型/愿景型/学习型/运营健康/合规安全），附带反模式目录。"},
+        {"icon": "👤", "title": "用户画像", "cmd": "/persona", "desc": "基于证据生成产品/营销用户画像，附带可信度评级。帮团队建立对用户的一致认知。"},
+        {"icon": "📋", "title": "精益画布", "cmd": "/lean-canvas", "desc": "一页纸的商业假设画布。覆盖问题、客户细分、价值主张、方案、渠道、收入、成本、指标、不公平优势九大模块。"},
+        {"icon": "📢", "title": "利益相关方更新", "cmd": "/stakeholder-update", "desc": "异步向上沟通。5 种渠道 × 5 种受众维度，选对方式同步项目状态和关键决策。"}
+      ]
+    },
+    {
+      "title": "会议工具",
+      "items": [
+        {"icon": "📅", "title": "会议议程", "cmd": "/meeting-agenda", "desc": "面向参会者的结构性议程。有时间盒、主题标签、负责人的预读材料，支持 10 种会议类型。"},
+        {"icon": "📝", "title": "会议简报", "cmd": "/meeting-brief", "desc": "个人的会前战略准备。包含利益相关方分析、排序后的目标、预期 Q&A，让你带着方案参会。"},
+        {"icon": "📄", "title": "会议纪要", "cmd": "/meeting-recap", "desc": "按主题分段的会后总结。重大决策加粗标注，行动项内联展示，会自动发现同目录的议程文件。"},
+        {"icon": "🔗", "title": "跨会综合", "cmd": "/meeting-synthesize", "desc": "跨会议「考古」工具。从多份会议记录中挖掘隐藏模式、趋势变化和矛盾点，发现单次会议看不到的东西。"}
+      ]
+    },
+    {
+      "title": "实用工具",
+      "items": [
+        {"icon": "📊", "title": "Mermaid 图表", "cmd": "/mermaid-diagrams", "desc": "15 种图表类型（流程图/序列图/状态图/用户旅程等），两种视角导航（类型目录 + PM 用例指南）。"},
+        {"icon": "🎬", "title": "幻灯片制作", "cmd": "/slideshow-creator", "desc": "从 JSON Deck 规格生成专业演示文稿。18 种幻灯片类型，明暗双色方案，兼容 Google Slides。"},
+        {"icon": "🔧", "title": "Skill 构建器", "cmd": "/pm-skill-builder", "desc": "从想法创建新的 PM Skill。包含差距分析（对已有 skills）、分类、草稿生成到正式发布的完整流程。"},
+        {"icon": "✅", "title": "Skill 验证器", "cmd": "/pm-skill-validate", "desc": "审计现有 skill 的结构合规性和质量标准。产出分级报告（WARN/FAIL）和可操作建议。"},
+        {"icon": "🔄", "title": "Skill 迭代器", "cmd": "/pm-skill-iterate", "desc": "基于反馈或验证报告对 skill 进行迭代改进。支持预览 diff、版本号建议和备份。"},
+        {"icon": "📦", "title": "更新 PM Skills", "cmd": "/update-pm-skills", "desc": "检查 pm-skills 套件的新版本。预览更新内容，确认后应用，自动备份旧版本。"}
+      ]
+    }
+  ],
+  "pageNav": {
+    "prev": {"label": "← 返回", "title": "回到首页", "href": "index.html"},
+    "next": {"label": "开始使用 →", "title": "发现 — 找对问题", "href": "discover.html"}
+  }
+}

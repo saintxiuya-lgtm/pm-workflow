@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://saintxiuya-lgtm.github.io/pm-workflow/sitemap.xml
