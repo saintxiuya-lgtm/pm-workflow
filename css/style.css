@@ -857,7 +857,37 @@ img {
 
 /* --- Print --- */
 @media print {
-  .site-nav { display: none; }
-  body { padding-top: 0; }
-  .phase-card:hover { transform: none; box-shadow: var(--shadow-sm); }
+  .site-nav,
+  .theme-toggle,
+  .phase-nav,
+  .skip-link,
+  .footer-links,
+  button { display: none !important; }
+
+  body {
+    padding-top: 0;
+    color: #000;
+    background: #fff;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #555;
+  }
+
+  .phase-card,
+  .skill-card,
+  .tool-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .phase-card:hover { transform: none; box-shadow: none; }
+
+  h1, h2, h3 { break-after: avoid; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.1rem; }
 }
