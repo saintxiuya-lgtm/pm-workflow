@@ -4,7 +4,7 @@
   "description": "一套完整的产品经理工作流，覆盖从方向验证到复盘迭代的全流程。",
   "url": "https://saintxiuya-lgtm.github.io/pm-workflow",
   "lang": "zh-CN",
-  "footer": "PM Workflow — 产品经理工作流参考",
+  "footer": "整理自用，随时更新。有建议欢迎提 issue。",
   "navItems": [
     {"label": "首页", "href": "/"},
     {"label": "发现", "href": "/discover/"},
