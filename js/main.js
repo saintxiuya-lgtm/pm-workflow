@@ -18,14 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       document.documentElement.removeAttribute('data-theme');
     }
-    updateThemeToggleIcon(theme);
+    updateThemeToggleText(theme);
   }
 
-  function updateThemeToggleIcon(theme) {
+  function updateThemeToggleText(theme) {
     var btn = document.querySelector('.theme-toggle');
     if (btn) {
-      btn.textContent = theme === 'dark' ? '☀️' : '🌙';
-      btn.setAttribute('aria-label', theme === 'dark' ? '切换亮色模式' : '切换暗色模式');
+      btn.textContent = theme === 'dark' ? '亮色' : '暗色';
     }
   }
 
