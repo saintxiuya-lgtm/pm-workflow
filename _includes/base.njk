@@ -6,6 +6,7 @@
   <title>{% if title %}{{ title }} — {{ site.name }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ description or site.description }}">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/search.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Open Graph -->
@@ -56,6 +57,21 @@
 
   {% include "footer.njk" %}
 
+  <!-- Search Modal -->
+  <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="搜索技能和工具">
+    <div class="search-box">
+      <div class="search-input-wrap">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="text" id="search-input" placeholder="搜索技能、命令、关键词…" autocomplete="off" spellcheck="false">
+        <span class="search-kbd">ESC</span>
+        <button class="search-close" aria-label="关闭搜索">✕</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+
+  <script src="/js/search-data.js"></script>
+  <script src="/js/search.js"></script>
   <script src="/js/main.js"></script>
 </body>
 </html>

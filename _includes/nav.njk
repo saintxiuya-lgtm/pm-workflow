@@ -11,6 +11,7 @@
       {% for item in site.navItems %}
       <li><a href="{{ item.href }}"{% if page.url == item.href %} class="active" aria-current="page"{% endif %}>{{ item.label }}</a></li>
       {% endfor %}
+      <li><button class="search-toggle" aria-label="搜索" title="搜索 (Ctrl+K)">🔍</button></li>
       <li><button class="theme-toggle" aria-label="切换暗色模式" title="切换暗色模式">🌙</button></li>
     </ul>
   </div>

@@ -4,8 +4,9 @@
   "description": "产品经理工作流参考站 — 六阶段闭环 + 数据驱动",
   "private": true,
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "serve": "npx @11ty/eleventy --serve",
+    "prebuild": "node build-search-index.js",
+    "build": "eleventy",
+    "serve": "eleventy --serve",
     "clean": "rm -rf _site"
   },
   "devDependencies": {

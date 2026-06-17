@@ -1,0 +1,364 @@
+[
+  {
+    "title": "发现 — 找对问题",
+    "desc": "做对的产品比把产品做对更重要。这个阶段的目标是确认我们在解决一个真实存在的问题。",
+    "text": "发现 找对问题 做对的产品比把产品做对更重要。这个阶段的目标是确认我们在解决一个真实存在的问题。 这个需求真实存在吗？用户现在怎么解决它？ 市场上有哪些已有方案？我们有什么差异化空间？ 谁是最重要的利益相关方？他们的期望是什么？",
+    "type": "phase",
+    "href": "/discover/"
+  },
+  {
+    "cmd": "/interview-synthesis",
+    "desc": "把用户研究原始数据转化为可执行的洞察。从多个访谈中识别模式、提炼主题、关联解决方案。",
+    "text": " /interview-synthesis 把用户研究原始数据转化为可执行的洞察。从多个访谈中识别模式、提炼主题、关联解决方案。 完成用户访谈后，需要综合多份访谈记录提炼洞察时",
+    "type": "skill",
+    "href": "/discover/",
+    "phase": "发现"
+  },
+  {
+    "cmd": "/competitive-analysis",
+    "desc": "系统化分析市场格局，找到差异化机会。覆盖直接竞品、间接竞品和替代方案。",
+    "text": " /competitive-analysis 系统化分析市场格局，找到差异化机会。覆盖直接竞品、间接竞品和替代方案。 进入新市场前、规划新功能时、需要了解竞争格局时",
+    "type": "skill",
+    "href": "/discover/",
+    "phase": "发现"
+  },
+  {
+    "cmd": "/stakeholder-summary",
+    "desc": "识别关键利益相关方，理解他们的关注点、期望和影响力，为后续对齐和管理打好基础。",
+    "text": " /stakeholder-summary 识别关键利益相关方，理解他们的关注点、期望和影响力，为后续对齐和管理打好基础。 项目启动初期，需要了解谁有话语权、谁的诉求需要被考虑时",
+    "type": "skill",
+    "href": "/discover/",
+    "phase": "发现"
+  },
+  {
+    "title": "定义 — 框定问题",
+    "desc": "把模糊的痛点转化为精确的问题陈述，确保团队对「解决什么问题」有一致的理解。",
+    "text": "定义 框定问题 把模糊的痛点转化为精确的问题陈述，确保团队对「解决什么问题」有一致的理解。 我们究竟在解决什么问题？问题陈述是什么？ 哪些假设需要先验证才能放心推进？ 用户真正想「雇用」产品完成什么任务（JTBD）？",
+    "type": "phase",
+    "href": "/define/"
+  },
+  {
+    "cmd": "/problem-statement",
+    "desc": "把模糊的问题变成清晰、可行动的问题陈述。包含问题背景、影响范围和成功标准。",
+    "text": " /problem-statement 把模糊的问题变成清晰、可行动的问题陈述。包含问题背景、影响范围和成功标准。 发现问题后，需要精确定义问题边界时",
+    "type": "skill",
+    "href": "/define/",
+    "phase": "定义"
+  },
+  {
+    "cmd": "/hypothesis",
+    "desc": "定义可验证的假设，附带成功指标。用「我们相信…会…我们通过…验证」的结构化格式。",
+    "text": " /hypothesis 定义可验证的假设，附带成功指标。用「我们相信…会…我们通过…验证」的结构化格式。 有解决方案方向但需要验证假设是否成立时",
+    "type": "skill",
+    "href": "/define/",
+    "phase": "定义"
+  },
+  {
+    "cmd": "/opportunity-tree",
+    "desc": "Teresa Torres 方法论的落地工具。从期望 outcome 出发，反向拆解用户机会点，系统性探索解决方案空间。",
+    "text": " /opportunity-tree Teresa Torres 方法论的落地工具。从期望 outcome 出发，反向拆解用户机会点，系统性探索解决方案空间。 需要系统性拆解用户问题、探索多个解决方案方向时",
+    "type": "skill",
+    "href": "/define/",
+    "phase": "定义"
+  },
+  {
+    "cmd": "/jtbd-canvas",
+    "desc": "Jobs to be Done 框架。理解用户真正「雇用」产品完成的任务，而非停留在功能层面。",
+    "text": " /jtbd-canvas Jobs to be Done 框架。理解用户真正「雇用」产品完成的任务，而非停留在功能层面。 需要理解用户深层动机、避免功能堆砌时",
+    "type": "skill",
+    "href": "/define/",
+    "phase": "定义"
+  },
+  {
+    "title": "开发 — 探索方案",
+    "desc": "明确问题之后，探索可能的解决方案，评估技术可行性和设计决策，为落地执行做准备。",
+    "text": "开发 探索方案 明确问题之后，探索可能的解决方案，评估技术可行性和设计决策，为落地执行做准备。 解决方案长什么样？核心逻辑是什么？ 技术路线是否可行？有哪些关键依赖？ 关键设计决策是什么？为什么这么选？",
+    "type": "phase",
+    "href": "/develop/"
+  },
+  {
+    "cmd": "/solution-brief",
+    "desc": "一页纸的方案 pitch。清晰描述解决方案的核心逻辑、目标用户、关键功能和非功能需求。",
+    "text": " /solution-brief 一页纸的方案 pitch。清晰描述解决方案的核心逻辑、目标用户、关键功能和非功能需求。 问题定义完成后，需要产出可评估的解决方案时",
+    "type": "skill",
+    "href": "/develop/",
+    "phase": "开发"
+  },
+  {
+    "cmd": "/spike-summary",
+    "desc": "技术预研和探索的记录。记录实验目标、方法、结果和推荐方案，帮助团队做技术决策。",
+    "text": " /spike-summary 技术预研和探索的记录。记录实验目标、方法、结果和推荐方案，帮助团队做技术决策。 技术方案不确定、需要花时间研究再决定时",
+    "type": "skill",
+    "href": "/develop/",
+    "phase": "开发"
+  },
+  {
+    "cmd": "/adr",
+    "desc": "Architecture Decision Record（Nygard 格式）。记录每个关键架构决策的上下文、方案对比和最终选择。",
+    "text": " /adr Architecture Decision Record（Nygard 格式）。记录每个关键架构决策的上下文、方案对比和最终选择。 做出重要技术或架构决策时，需要记录决策原因供日后追溯",
+    "type": "skill",
+    "href": "/develop/",
+    "phase": "开发"
+  },
+  {
+    "cmd": "/design-rationale",
+    "desc": "记录设计决策背后的原因——为什么选这个方案而不是另一个，基于什么数据和原则。",
+    "text": " /design-rationale 记录设计决策背后的原因——为什么选这个方案而不是另一个，基于什么数据和原则。 做了重要的交互或体验设计决策，需要让团队理解「为什么」时",
+    "type": "skill",
+    "href": "/develop/",
+    "phase": "开发"
+  },
+  {
+    "title": "交付 — 落地执行",
+    "desc": "把解决方案转化成可执行的开发任务。一份好的 PRD 让团队知道要做什么、为什么做、怎么算做完。",
+    "text": "交付 落地执行 把解决方案转化成可执行的开发任务。一份好的 PRD 让团队知道要做什么、为什么做、怎么算做完。 这个需求的完整背景和目标是什么？怎么衡量成功？ 具体要做哪些功能？边界条件有哪些？ 发布需要检查什么？怎么通知用户？",
+    "type": "phase",
+    "href": "/deliver/"
+  },
+  {
+    "cmd": "/deliver-prd",
+    "desc": "全面的 PRD 生成，覆盖问题背景、成功指标、功能需求、技术考量、依赖和风险、时间线。",
+    "text": " /deliver-prd 全面的 PRD 生成，覆盖问题背景、成功指标、功能需求、技术考量、依赖和风险、时间线。 需要正式输出 PRD 给工程团队或 AI Agent 执行时",
+    "type": "skill",
+    "href": "/deliver/",
+    "phase": "交付"
+  },
+  {
+    "cmd": "/user-stories",
+    "desc": "INVEST 合规的用户故事，附带验收标准。把 PRD 中的需求拆解成可开发的独立故事。",
+    "text": " /user-stories INVEST 合规的用户故事，附带验收标准。把 PRD 中的需求拆解成可开发的独立故事。 PRD 完成后，需要将需求拆分为可执行的故事时",
+    "type": "skill",
+    "href": "/deliver/",
+    "phase": "交付"
+  },
+  {
+    "cmd": "/acceptance-criteria",
+    "desc": "Given/When/Then 格式的验收标准，确保开发和测试对「做完」有一致的理解。",
+    "text": " /acceptance-criteria Given/When/Then 格式的验收标准，确保开发和测试对「做完」有一致的理解。 需要为故事或功能定义测试验收条件时",
+    "type": "skill",
+    "href": "/deliver/",
+    "phase": "交付"
+  },
+  {
+    "cmd": "/edge-cases",
+    "desc": "系统化梳理错误状态、边界值和恢复路径。避免「99% 好用但 1% 崩溃」的发布事故。",
+    "text": " /edge-cases 系统化梳理错误状态、边界值和恢复路径。避免「99% 好用但 1% 崩溃」的发布事故。 需求定义阶段，需要深入排查边界和异常情况时",
+    "type": "skill",
+    "href": "/deliver/",
+    "phase": "交付"
+  },
+  {
+    "cmd": "/launch-checklist",
+    "desc": "完整的发布检查清单。覆盖功能、技术、运营、法务、市场等维度，确保不遗漏任何一步。",
+    "text": " /launch-checklist 完整的发布检查清单。覆盖功能、技术、运营、法务、市场等维度，确保不遗漏任何一步。 发布前倒数阶段，逐项确认是否准备就绪",
+    "type": "skill",
+    "href": "/deliver/",
+    "phase": "交付"
+  },
+  {
+    "cmd": "/release-notes",
+    "desc": "面向用户的发布说明。用用户能理解的语言描述新功能、修复和改进，保持品牌调性。",
+    "text": " /release-notes 面向用户的发布说明。用用户能理解的语言描述新功能、修复和改进，保持品牌调性。 功能发布或版本更新时，需要通知用户",
+    "type": "skill",
+    "href": "/deliver/",
+    "phase": "交付"
+  },
+  {
+    "title": "衡量 — 验证效果",
+    "desc": "数据驱动决策。用实验和指标验证产品假设，而不是凭感觉判断「做对了没有」。",
+    "text": "衡量 验证效果 数据驱动决策。用实验和指标验证产品假设，而不是凭感觉判断「做对了没有」。 我们的假设到底成不成立？实验怎么设计？ 需要埋哪些点？怎么定义数据指标？ 实验结果告诉我们什么？下一步行动是什么？",
+    "type": "phase",
+    "href": "/measure/"
+  },
+  {
+    "cmd": "/experiment-design",
+    "desc": "严谨的 A/B 测试和实验规划。定义假设、变量、样本量、成功标准和实验周期。",
+    "text": " /experiment-design 严谨的 A/B 测试和实验规划。定义假设、变量、样本量、成功标准和实验周期。 需要对某个功能或策略做定量验证时",
+    "type": "skill",
+    "href": "/measure/",
+    "phase": "衡量"
+  },
+  {
+    "cmd": "/instrumentation-spec",
+    "desc": "定义需要追踪的事件、属性和维度。确保数据收集的完整性和一致性，避免「数据有了但没法分析」。",
+    "text": " /instrumentation-spec 定义需要追踪的事件、属性和维度。确保数据收集的完整性和一致性，避免「数据有了但没法分析」。 功能开发和实验启动前，需要定义数据收集方案时",
+    "type": "skill",
+    "href": "/measure/",
+    "phase": "衡量"
+  },
+  {
+    "cmd": "/dashboard-requirements",
+    "desc": "设计数据分析看板的结构和指标。明确看板的使用者、核心指标、数据源和刷新频率。",
+    "text": " /dashboard-requirements 设计数据分析看板的结构和指标。明确看板的使用者、核心指标、数据源和刷新频率。 需要搭建数据分析看板来持续监控产品健康度时",
+    "type": "skill",
+    "href": "/measure/",
+    "phase": "衡量"
+  },
+  {
+    "cmd": "/experiment-results",
+    "desc": "记录实验的完整结果和学到的教训。包含实验概要、数据分析、统计显著性和行动建议。",
+    "text": " /experiment-results 记录实验的完整结果和学到的教训。包含实验概要、数据分析、统计显著性和行动建议。 实验结束后，需要系统化记录结果和决策时",
+    "type": "skill",
+    "href": "/measure/",
+    "phase": "衡量"
+  },
+  {
+    "cmd": "/okr-grader",
+    "desc": "根据预定义类型（承诺型/愿景型/学习型等）对目标完成情况进行评分，拒绝事后改目标等误用行为。",
+    "text": " /okr-grader 根据预定义类型（承诺型/愿景型/学习型等）对目标完成情况进行评分，拒绝事后改目标等误用行为。 OKR 周期结束时，需要客观评估完成情况",
+    "type": "skill",
+    "href": "/measure/",
+    "phase": "衡量"
+  },
+  {
+    "title": "迭代 — 持续优化",
+    "desc": "每个周期都是一次学习机会。复盘 > 沉淀 > 调整方向，让团队不断变强。",
+    "text": "迭代 持续优化 每个周期都是一次学习机会。复盘 > 沉淀 > 调整方向，让团队不断变强。 这个周期做对了什么？做错了什么？可以改进什么？ 值得沉淀的经验和教训是什么？ 需要坚持还是转向？证据是什么？",
+    "type": "phase",
+    "href": "/iterate/"
+  },
+  {
+    "cmd": "/retrospective",
+    "desc": "结构化的团队回顾，驱动实际改进。覆盖做得好、做得不好、可以改进的、行动清单。",
+    "text": " /retrospective 结构化的团队回顾，驱动实际改进。覆盖做得好、做得不好、可以改进的、行动清单。 版本发布后或 Sprint 结束时，团队需要系统性回顾反思时",
+    "type": "skill",
+    "href": "/iterate/",
+    "phase": "迭代"
+  },
+  {
+    "cmd": "/lessons-log",
+    "desc": "把团队的经验转化为组织记忆。记录产生的背景、学到的东西、对未来的建议。",
+    "text": " /lessons-log 把团队的经验转化为组织记忆。记录产生的背景、学到的东西、对未来的建议。 完成了重要里程碑或经历了重大事件后，有值得记录的经验教训时",
+    "type": "skill",
+    "href": "/iterate/",
+    "phase": "迭代"
+  },
+  {
+    "cmd": "/refinement-notes",
+    "desc": "记录 Backlog Refinement 的结果，包括故事拆解、重新估算、优先级调整和依赖识别。",
+    "text": " /refinement-notes 记录 Backlog Refinement 的结果，包括故事拆解、重新估算、优先级调整和依赖识别。 Backlog 梳理会议后，需要记录调整结果和决策原因时",
+    "type": "skill",
+    "href": "/iterate/",
+    "phase": "迭代"
+  },
+  {
+    "cmd": "/pivot-decision",
+    "desc": "基于证据的坚持/转向决策框架。帮助团队理性评估当前方向是否正确，以及何时应该调整。",
+    "text": " /pivot-decision 基于证据的坚持/转向决策框架。帮助团队理性评估当前方向是否正确，以及何时应该调整。 收到关键反馈或数据后，需要判断是否调整产品方向时",
+    "type": "skill",
+    "href": "/iterate/",
+    "phase": "迭代"
+  },
+  {
+    "title": "OKR 写作",
+    "cmd": "/okr-writer",
+    "desc": "起草目标与关键结果计划。五种 KR 类型（承诺型/愿景型/学习型/运营健康/合规安全），附带反模式目录。",
+    "text": "🎯 OKR 写作 /okr-writer 起草目标与关键结果计划。五种 KR 类型（承诺型/愿景型/学习型/运营健康/合规安全），附带反模式目录。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "用户画像",
+    "cmd": "/persona",
+    "desc": "基于证据生成产品/营销用户画像，附带可信度评级。帮团队建立对用户的一致认知。",
+    "text": "👤 用户画像 /persona 基于证据生成产品/营销用户画像，附带可信度评级。帮团队建立对用户的一致认知。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "精益画布",
+    "cmd": "/lean-canvas",
+    "desc": "一页纸的商业假设画布。覆盖问题、客户细分、价值主张、方案、渠道、收入、成本、指标、不公平优势九大模块。",
+    "text": "📋 精益画布 /lean-canvas 一页纸的商业假设画布。覆盖问题、客户细分、价值主张、方案、渠道、收入、成本、指标、不公平优势九大模块。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "利益相关方更新",
+    "cmd": "/stakeholder-update",
+    "desc": "异步向上沟通。5 种渠道 × 5 种受众维度，选对方式同步项目状态和关键决策。",
+    "text": "📢 利益相关方更新 /stakeholder-update 异步向上沟通。5 种渠道 × 5 种受众维度，选对方式同步项目状态和关键决策。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "会议议程",
+    "cmd": "/meeting-agenda",
+    "desc": "面向参会者的结构性议程。有时间盒、主题标签、负责人的预读材料，支持 10 种会议类型。",
+    "text": "📅 会议议程 /meeting-agenda 面向参会者的结构性议程。有时间盒、主题标签、负责人的预读材料，支持 10 种会议类型。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "会议简报",
+    "cmd": "/meeting-brief",
+    "desc": "个人的会前战略准备。包含利益相关方分析、排序后的目标、预期 Q&A，让你带着方案参会。",
+    "text": "📝 会议简报 /meeting-brief 个人的会前战略准备。包含利益相关方分析、排序后的目标、预期 Q&A，让你带着方案参会。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "会议纪要",
+    "cmd": "/meeting-recap",
+    "desc": "按主题分段的会后总结。重大决策加粗标注，行动项内联展示，会自动发现同目录的议程文件。",
+    "text": "📄 会议纪要 /meeting-recap 按主题分段的会后总结。重大决策加粗标注，行动项内联展示，会自动发现同目录的议程文件。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "跨会综合",
+    "cmd": "/meeting-synthesize",
+    "desc": "跨会议「考古」工具。从多份会议记录中挖掘隐藏模式、趋势变化和矛盾点，发现单次会议看不到的东西。",
+    "text": "🔗 跨会综合 /meeting-synthesize 跨会议「考古」工具。从多份会议记录中挖掘隐藏模式、趋势变化和矛盾点，发现单次会议看不到的东西。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "Mermaid 图表",
+    "cmd": "/mermaid-diagrams",
+    "desc": "15 种图表类型（流程图/序列图/状态图/用户旅程等），两种视角导航（类型目录 + PM 用例指南）。",
+    "text": "📊 Mermaid 图表 /mermaid-diagrams 15 种图表类型（流程图/序列图/状态图/用户旅程等），两种视角导航（类型目录 + PM 用例指南）。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "幻灯片制作",
+    "cmd": "/slideshow-creator",
+    "desc": "从 JSON Deck 规格生成专业演示文稿。18 种幻灯片类型，明暗双色方案，兼容 Google Slides。",
+    "text": "🎬 幻灯片制作 /slideshow-creator 从 JSON Deck 规格生成专业演示文稿。18 种幻灯片类型，明暗双色方案，兼容 Google Slides。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "Skill 构建器",
+    "cmd": "/pm-skill-builder",
+    "desc": "从想法创建新的 PM Skill。包含差距分析（对已有 skills）、分类、草稿生成到正式发布的完整流程。",
+    "text": "🔧 Skill 构建器 /pm-skill-builder 从想法创建新的 PM Skill。包含差距分析（对已有 skills）、分类、草稿生成到正式发布的完整流程。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "Skill 验证器",
+    "cmd": "/pm-skill-validate",
+    "desc": "审计现有 skill 的结构合规性和质量标准。产出分级报告（WARN/FAIL）和可操作建议。",
+    "text": "✅ Skill 验证器 /pm-skill-validate 审计现有 skill 的结构合规性和质量标准。产出分级报告（WARN/FAIL）和可操作建议。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "Skill 迭代器",
+    "cmd": "/pm-skill-iterate",
+    "desc": "基于反馈或验证报告对 skill 进行迭代改进。支持预览 diff、版本号建议和备份。",
+    "text": "🔄 Skill 迭代器 /pm-skill-iterate 基于反馈或验证报告对 skill 进行迭代改进。支持预览 diff、版本号建议和备份。",
+    "type": "tool",
+    "href": "/tools/"
+  },
+  {
+    "title": "更新 PM Skills",
+    "cmd": "/update-pm-skills",
+    "desc": "检查 pm-skills 套件的新版本。预览更新内容，确认后应用，自动备份旧版本。",
+    "text": "📦 更新 PM Skills /update-pm-skills 检查 pm-skills 套件的新版本。预览更新内容，确认后应用，自动备份旧版本。",
+    "type": "tool",
+    "href": "/tools/"
+  }
+]
