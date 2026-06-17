@@ -460,104 +460,139 @@ img {
   gap: 4px;
 }
 
-/* --- Section --- */
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: var(--color-gray-900);
+/* --- Page Header (Phase Pages) --- */
+.phase-page {
+  max-width: 720px;
 }
 
-/* --- Skill Cards (Phase Page) --- */
-.skill-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 16px;
-  margin-bottom: 48px;
-}
-
-.skill-card {
-  background: var(--color-white);
-  border: 1px solid #E8E8E8;
-  border-radius: var(--radius-sm);
-  padding: 20px;
-  transition: border-color 0.2s;
-}
-
-.skill-card:hover {
-  border-color: #C0C0C0;
-}
-
-.skill-card h3 {
+.phase-subtitle {
   font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
 }
 
-.skill-card .skill-cmd {
-  display: inline-block;
+.page-desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* --- Section (Phase Pages) --- */
+.phase-section {
+  margin-bottom: 40px;
+}
+
+.phase-section h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+/* --- Skill List (Phase Pages) --- */
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.skill-item:last-child {
+  border-bottom: none;
+}
+
+.skill-item-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.skill-item-cmd {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-primary);
   background: var(--color-primary-bg);
   padding: 2px 8px;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
 }
 
-.skill-card .skill-desc {
+.skill-item-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+}
+
+.skill-item-desc {
   font-size: 0.875rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
-.skill-card .skill-when {
+.skill-item-when {
   font-size: 0.8125rem;
   color: var(--color-gray-500);
-  padding: 10px 12px;
-  background: var(--color-gray-50);
-  border-radius: var(--radius-sm);
 }
 
-.skill-card .skill-when strong {
-  color: var(--color-gray-700);
-}
-
-/* --- Output List --- */
-.output-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
-  margin-bottom: 48px;
-}
-
-.output-item {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-sm);
-  padding: 16px 20px;
+/* --- Output List Simple --- */
+.output-list-simple {
+  list-style: none;
   display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.output-item .output-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.output-list-simple li {
   font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  padding: 6px 0;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.output-list-simple li:last-child {
+  border-bottom: none;
+}
+
+/* --- Tip List (Tools extra section) --- */
+.tip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tip-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.tip-item:last-child {
+  border-bottom: none;
+}
+
+.tip-skill {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
   flex-shrink: 0;
+}
+
+.tip-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
 }
 
 /* --- Phase Navigation (prev/next) --- */

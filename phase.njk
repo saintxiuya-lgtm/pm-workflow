@@ -5,84 +5,86 @@ pagination:
   alias: phase
 permalink: "{{ phase.id }}/index.html"
 eleventyComputed:
-  title: "{{ phase.name }} — {{ phase.short }}"
+  title: "{{ phase.name }}"
   description: "{{ phase.description }}"
   breadcrumb:
     - name: "{{ phase.name }}"
       href: "/{{ phase.id }}/"
 ---
-{# Layout #}
 {% extends "_includes/base.njk" %}
 
 {% block content %}
-<div class="container">
+<div class="container phase-page">
   <div class="page-header">
     <div class="breadcrumb">
       <a href="/">首页</a>
       <span aria-hidden="true">/</span>
       <span>{{ phase.name }}</span>
     </div>
-    <h1><span aria-hidden="true">{{ phase.emoji }}</span> {{ phase.name }} — {{ phase.short }}</h1>
-    <div class="subtitle">{{ phase.description }}</div>
+    <h1>{{ phase.name }}<span class="phase-subtitle"> {{ phase.short }}</span></h1>
+    <p class="page-desc">{{ phase.description }}</p>
   </div>
 
-  <section>
-    <h2 class="section-title">这个阶段回答的关键问题</h2>
-    <div class="quick-start">
-      <ul class="question-list">
-        {% for q in phase.questions %}
-        <li>{{ q }}</li>
-        {% endfor %}
-      </ul>
-    </div>
+  <!-- 关键问题 -->
+  <section class="phase-section">
+    <h2>这个阶段回答的关键问题</h2>
+    <ul class="question-list">
+      {% for q in phase.questions %}
+      <li>{{ q }}</li>
+      {% endfor %}
+    </ul>
   </section>
 
+  <!-- 额外区块（工具页的常用组合） -->
   {% if phase.extraSection %}
-  <section>
-    <h2 class="section-title">{{ phase.extraSection.title }}</h2>
-    <div class="quick-start">
-      <div class="quick-start-grid quick-start-grid--wide">
-        {% for item in phase.extraSection.items %}
-        <div class="quick-start-item">
-          <span class="qs-command">{{ item.cmd }}</span>
-          <span class="qs-desc">{{ item.desc }}</span>
-        </div>
-        {% endfor %}
+  <section class="phase-section">
+    <h2>{{ phase.extraSection.title }}</h2>
+    <div class="tip-list">
+      {% for item in phase.extraSection.items %}
+      <div class="tip-item">
+        <span class="tip-skill">{{ item.cmd }}</span>
+        <span class="tip-desc">{{ item.desc }}</span>
       </div>
+      {% endfor %}
     </div>
   </section>
   {% endif %}
 
-  <section>
-    <h2 class="section-title">技能工具</h2>
-    <div class="skill-cards">
+  <!-- 技能工具 -->
+  <section class="phase-section">
+    <h2>技能工具</h2>
+    <div class="skill-list">
       {% for skill in phase.skills %}
-      <div class="skill-card">
-        <h3><span aria-hidden="true">{{ skill.icon }}</span> {{ skill.title }}</h3>
-        <span class="skill-cmd">{{ skill.cmd }}</span>
-        <div class="skill-desc">{{ skill.desc }}</div>
-        <div class="skill-when"><strong>使用时机：</strong>{{ skill.when }}</div>
+      <div class="skill-item">
+        <div class="skill-item-header">
+          <span class="skill-item-cmd">{{ skill.cmd }}</span>
+          <span class="skill-item-name">{{ skill.title }}</span>
+        </div>
+        <p class="skill-item-desc">{{ skill.desc }}</p>
+        <p class="skill-item-when">{{ skill.when }}</p>
       </div>
       {% endfor %}
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">产出物</h2>
-    <div class="output-list">
+  <!-- 产出物 -->
+  <section class="phase-section">
+    <h2>产出物</h2>
+    <ul class="output-list-simple">
       {% for output in phase.outputs %}
-      <div class="output-item"><span class="output-icon {{ phase.colorClass }}" aria-hidden="true">📄</span>{{ output }}</div>
+      <li>{{ output }}</li>
       {% endfor %}
-    </div>
+    </ul>
   </section>
 
+  <!-- 前后导航 -->
   <div class="phase-nav">
     {% set prevPhase = phases | find("id", phase.prev) %}
     {% set nextPhase = phases | find("id", phase.next) %}
     {% if prevPhase %}
     <a href="/{{ prevPhase.id }}/">
       <span class="nav-label">← 上一步</span>
-      <span class="nav-title">{{ prevPhase.name }} — {{ prevPhase.short }}</span>
+      <span class="nav-title">{{ prevPhase.name }}</span>
     </a>
     {% else %}
     <a href="/">
@@ -94,7 +96,7 @@ eleventyComputed:
     {% if nextPhase %}
     <a href="/{{ nextPhase.id }}/">
       <span class="nav-label">下一步 →</span>
-      <span class="nav-title">{{ nextPhase.name }} — {{ nextPhase.short }}</span>
+      <span class="nav-title">{{ nextPhase.name }}</span>
     </a>
     {% else %}
     <a href="/">
