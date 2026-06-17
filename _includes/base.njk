@@ -49,9 +49,53 @@
 <body>
   <a href="#main-content" class="skip-link">跳转到主内容</a>
 
-  {% include "nav.njk" %}
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <a href="/">{{ site.name }}</a>
+    </div>
 
-  <main id="main-content">
+    <nav class="sidebar-section">
+      <div class="sidebar-section-title">工作流</div>
+      <ul class="sidebar-nav">
+        {%- for p in phases %}
+        <li>
+          <a href="/{{ p.id }}/"
+             class="{% if page.url == '/' + p.id + '/' %}active{% endif %}">
+            <span class="phase-dot dot-{{ p.id }}"></span>
+            {{ p.name }}
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    <nav class="sidebar-section">
+      <div class="sidebar-section-title">工具</div>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="/tools/"
+             class="{% if page.url == '/tools/' %}active{% endif %}">
+            全部工具
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-actions">
+        <button class="sidebar-action-btn" data-action="search" aria-label="搜索">搜索</button>
+        <button class="sidebar-action-btn theme-toggle" aria-label="切换主题">暗色</button>
+      </div>
+      <div class="sidebar-footer-text">{{ site.footer | safe }}</div>
+    </div>
+  </aside>
+
+  <!-- Mobile menu toggle -->
+  <button class="menu-toggle" id="menu-toggle" aria-label="打开导航" aria-expanded="false">☰</button>
+
+  <!-- Main content -->
+  <main class="content" id="main-content">
     {% block content %}{{ content | safe }}{% endblock %}
   </main>
 

@@ -1,24 +1,21 @@
 /* ============================================
-   PM Workflow — 交互脚本 v2
+   PM Workflow — 主脚本（侧边栏布局）
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', function() {
+(function () {
   'use strict';
 
-  // --- Theme management ---
-  function getTheme() {
-    const stored = localStorage.getItem('pm-workflow-theme');
+  // --- Theme ---
+  var STORAGE_KEY = 'pm-workflow-theme';
+
+  function getPreferredTheme() {
+    var stored = localStorage.getItem(STORAGE_KEY);
     if (stored) return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
   function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
-    updateThemeToggleText(theme);
+    document.documentElement.setAttribute('data-theme', theme);
   }
 
   function updateThemeToggleText(theme) {
@@ -28,86 +25,59 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  var currentTheme = getTheme();
+  function toggleTheme() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(STORAGE_KEY, next);
+    applyTheme(next);
+    updateThemeToggleText(next);
+  }
+
+  // Init theme
+  var currentTheme = getPreferredTheme();
   applyTheme(currentTheme);
-
-  document.querySelector('.theme-toggle')?.addEventListener('click', function() {
-    var newTheme = document.documentElement.hasAttribute('data-theme') ? 'light' : 'dark';
-    applyTheme(newTheme);
-    localStorage.setItem('pm-workflow-theme', newTheme);
+  document.addEventListener('DOMContentLoaded', function () {
+    updateThemeToggleText(currentTheme);
   });
 
-  // Listen for system theme changes
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-    if (!localStorage.getItem('pm-workflow-theme')) {
-      applyTheme(e.matches ? 'dark' : 'light');
+  // Theme toggle button
+  document.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('theme-toggle')) {
+      toggleTheme();
     }
   });
 
-  // --- Mobile nav toggle ---
-  var toggleBtn = document.querySelector('.nav-toggle');
-  var navLinks = document.querySelector('.nav-links');
+  // --- Sidebar toggle (mobile) ---
+  document.addEventListener('click', function (e) {
+    var toggle = e.target.closest('#menu-toggle');
+    if (!toggle) return;
 
-  if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener('click', function() {
-      var expanded = navLinks.classList.toggle('open');
-      toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    });
+    var sidebar = document.getElementById('sidebar');
+    if (!sidebar) return;
 
-    // Close nav when clicking a link (mobile)
-    navLinks.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        navLinks.classList.remove('open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
+    var isOpen = sidebar.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
 
-    // Close nav when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.site-nav')) {
-        navLinks.classList.remove('open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // --- Active nav link ---
-  var currentPath = window.location.pathname.split('/').pop() || '';
-  // Handle path-based URLs like /discover/
-  if (!currentPath) {
-    var parts = window.location.pathname.replace(/\/$/, '').split('/');
-    currentPath = parts[parts.length - 1];
-  }
-  if (!currentPath || currentPath === '') currentPath = 'index.html';
-
-  document.querySelectorAll('.nav-links a').forEach(function(link) {
-    var href = link.getAttribute('href');
-    if (href) {
-      var hrefClean = href.replace(/^\//, '').replace(/\/$/, '');
-      if (!hrefClean || hrefClean === '') hrefClean = 'index.html';
-      // Match exact or path-based
-      if (hrefClean === currentPath || (href === '/' && (currentPath === 'index.html' || currentPath === '') || (currentPath && href.includes(currentPath)))) {
-        link.classList.add('active');
-      }
-    }
+  // Close sidebar on click outside (mobile)
+  document.addEventListener('click', function (e) {
+    if (window.innerWidth > 960) return;
+    var sidebar = document.getElementById('sidebar');
+    var toggle = document.getElementById('menu-toggle');
+    if (!sidebar || !sidebar.classList.contains('open')) return;
+    if (e.target.closest('#sidebar') || e.target.closest('#menu-toggle')) return;
+    sidebar.classList.remove('open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
   });
 
   // --- Smooth scroll for anchor links ---
-  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  // --- Keyboard shortcut: ESC to close mobile nav ---
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('open')) {
-      navLinks.classList.remove('open');
-      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    var target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   });
-});
+})();

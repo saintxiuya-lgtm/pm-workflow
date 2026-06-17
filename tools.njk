@@ -1,52 +1,47 @@
 ---
-permalink: tools/index.html
-eleventyComputed:
-  title: "跨阶段工具"
-  description: "这些工具不属于某一个特定阶段，而是贯穿产品经理的日常工作，随时可用。"
-  breadcrumb:
-    - name: "工具"
-      href: "/tools/"
+title: "工具"
+breadcrumb:
+  - name: "首页"
+    href: "/"
+  - name: "工具"
+    href: "{{ page.url }}"
+description: "14 个产品相关工具，覆盖图表、文档、AI 辅助等场景。"
 ---
-{% extends "_includes/base.njk" %}
+{% extends "base.njk" %}
 
 {% block content %}
-<div class="container phase-page">
-  <div class="page-header">
-    <div class="breadcrumb">
-      <a href="/">首页</a>
-      <span aria-hidden="true">/</span>
-      <span>工具</span>
+<div class="page-header">
+  <h1>🔧 工具箱</h1>
+  <div class="subtitle">14 个产品相关工具，覆盖图表、文档、AI 辅助等场景。</div>
+</div>
+
+<div class="tools-list">
+  {% for t in tools %}
+  <div class="tool-item">
+    {% if t.cmd %}<code class="tool-item-cmd">{{ t.cmd }}</code>{% endif %}
+    <div>
+      <div class="tool-item-name">{{ t.name }}</div>
+      <div class="tool-item-desc">{{ t.desc }}</div>
     </div>
-    <h1>跨阶段工具</h1>
-    <p class="page-desc">这些工具不属于某一个特定阶段，而是贯穿产品经理的日常工作，随时可用。</p>
   </div>
-
-  {% for section in tools.sections %}
-  <section class="phase-section">
-    <h2>{{ section.title }}</h2>
-    <div class="skill-list">
-      {% for tool in section.items %}
-      <div class="skill-item">
-        <div class="skill-item-header">
-          <span class="skill-item-cmd">{{ tool.cmd }}</span>
-          <span class="skill-item-name">{{ tool.title }}</span>
-        </div>
-        <p class="skill-item-desc">{{ tool.desc }}</p>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
   {% endfor %}
+</div>
 
-  <div class="phase-nav">
-    <a href="/">
-      <span class="nav-label">{{ tools.pageNav.prev.label }}</span>
-      <span class="nav-title">{{ tools.pageNav.prev.title }}</span>
-    </a>
-    <a href="/{{ phases[0].id }}/">
-      <span class="nav-label">{{ tools.pageNav.next.label }}</span>
-      <span class="nav-title">{{ tools.pageNav.next.title }}</span>
-    </a>
+<div class="phase-section" style="margin-top:40px;">
+  <h2>提示</h2>
+  <div class="tip-list">
+    <div class="tip-item">
+      <code class="tip-skill">/prd</code>
+      <span class="tip-desc">最常用——写 PRD、功能文档、需求整理</span>
+    </div>
+    <div class="tip-item">
+      <code class="tip-skill">/meeting-to-action</code>
+      <span class="tip-desc">整理会议纪要，提取行动项</span>
+    </div>
+    <div class="tip-item">
+      <code class="tip-skill">/obsidian-knowledge-saver</code>
+      <span class="tip-desc">沉淀对话内容到知识库</span>
+    </div>
   </div>
 </div>
 {% endblock %}

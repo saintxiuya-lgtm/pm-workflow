@@ -1,109 +1,92 @@
 ---
 pagination:
-  data: phases
+  data: collections.phasePages
   size: 1
   alias: phase
-permalink: "{{ phase.id }}/index.html"
-eleventyComputed:
-  title: "{{ phase.name }}"
-  description: "{{ phase.description }}"
-  breadcrumb:
-    - name: "{{ phase.name }}"
-      href: "/{{ phase.id }}/"
+permalink: "/{{ phase.id }}/index.html"
+title: "{{ phase.name }}"
+breadcrumb:
+  - name: "首页"
+    href: "/"
+  - name: "{{ phase.name }}"
+    href: "{{ page.url }}"
+description: "{{ phase.question }} — {{ phase.name }}阶段，产出：{{ phase.output }}"
 ---
-{% extends "_includes/base.njk" %}
+{% extends "base.njk" %}
 
 {% block content %}
-<div class="container phase-page">
-  <div class="page-header">
-    <div class="breadcrumb">
-      <a href="/">首页</a>
-      <span aria-hidden="true">/</span>
-      <span>{{ phase.name }}</span>
-    </div>
-    <h1>{{ phase.name }}<span class="phase-subtitle"> {{ phase.short }}</span></h1>
-    <p class="page-desc">{{ phase.description }}</p>
-  </div>
-
-  <!-- 关键问题 -->
-  <section class="phase-section">
-    <h2>这个阶段回答的关键问题</h2>
-    <ul class="question-list">
-      {% for q in phase.questions %}
-      <li>{{ q }}</li>
-      {% endfor %}
-    </ul>
-  </section>
-
-  <!-- 额外区块（工具页的常用组合） -->
-  {% if phase.extraSection %}
-  <section class="phase-section">
-    <h2>{{ phase.extraSection.title }}</h2>
-    <div class="tip-list">
-      {% for item in phase.extraSection.items %}
-      <div class="tip-item">
-        <span class="tip-skill">{{ item.cmd }}</span>
-        <span class="tip-desc">{{ item.desc }}</span>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
+<div class="page-header">
+  <h1>{{ phase.icon | default("📄") }} {{ phase.name }}</h1>
+  <div class="subtitle">{{ phase.question }}</div>
+  {% if phase.why %}
+  <div class="page-desc">{{ phase.why }}</div>
   {% endif %}
+</div>
 
-  <!-- 技能工具 -->
-  <section class="phase-section">
-    <h2>技能工具</h2>
-    <div class="skill-list">
-      {% for skill in phase.skills %}
-      <div class="skill-item">
-        <div class="skill-item-header">
-          <span class="skill-item-cmd">{{ skill.cmd }}</span>
-          <span class="skill-item-name">{{ skill.title }}</span>
-        </div>
-        <p class="skill-item-desc">{{ skill.desc }}</p>
-        <p class="skill-item-when">{{ skill.when }}</p>
+{% if phase.skills %}
+<div class="phase-section">
+  <h2>技能（{{ phase.skills | length }} 个）</h2>
+  <div class="skill-list">
+    {% for s in phase.skills %}
+    <div class="skill-item">
+      <div class="skill-item-header">
+        {% if s.cmd %}<code class="skill-item-cmd">{{ s.cmd }}</code>{% endif %}
+        <span class="skill-item-name">{{ s.name }}</span>
       </div>
-      {% endfor %}
+      {% if s.desc %}<div class="skill-item-desc">{{ s.desc }}</div>{% endif %}
+      {% if s.when %}<div class="skill-item-when">{{ s.when }}</div>{% endif %}
     </div>
-  </section>
-
-  <!-- 产出物 -->
-  <section class="phase-section">
-    <h2>产出物</h2>
-    <ul class="output-list-simple">
-      {% for output in phase.outputs %}
-      <li>{{ output }}</li>
-      {% endfor %}
-    </ul>
-  </section>
-
-  <!-- 前后导航 -->
-  <div class="phase-nav">
-    {% set prevPhase = phases | find("id", phase.prev) %}
-    {% set nextPhase = phases | find("id", phase.next) %}
-    {% if prevPhase %}
-    <a href="/{{ prevPhase.id }}/">
-      <span class="nav-label">← 上一步</span>
-      <span class="nav-title">{{ prevPhase.name }}</span>
-    </a>
-    {% else %}
-    <a href="/">
-      <span class="nav-label">← 返回</span>
-      <span class="nav-title">首页</span>
-    </a>
-    {% endif %}
-
-    {% if nextPhase %}
-    <a href="/{{ nextPhase.id }}/">
-      <span class="nav-label">下一步 →</span>
-      <span class="nav-title">{{ nextPhase.name }}</span>
-    </a>
-    {% else %}
-    <a href="/">
-      <span class="nav-label">回到首页 →</span>
-      <span class="nav-title">重新开始新周期</span>
-    </a>
-    {% endif %}
+    {% endfor %}
   </div>
 </div>
+{% endif %}
+
+{% if phase.output %}
+<div class="phase-section">
+  <h2>产出物</h2>
+  <ul class="output-list">
+    {% for o in phase.output | split(",") %}
+    <li>{{ o | trim }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if phase.tips %}
+<div class="phase-section">
+  <h2>提示</h2>
+  <div class="tip-list">
+    {% for t in phase.tips %}
+    <div class="tip-item">
+      {% if t.cmd %}<code class="tip-skill">{{ t.cmd }}</code>{% endif %}
+      <span class="tip-desc">{{ t.text }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if phase.prev or phase.next %}
+<div class="phase-nav">
+  {% if phase.prev %}
+  <a href="/{{ phase.prev.id }}/">
+    <div class="nav-label">← 上一阶段</div>
+    <div class="nav-title">{{ phase.prev.name }}</div>
+  </a>
+  {% endif %}
+  {% if phase.next %}
+  <a href="/{{ phase.next.id }}/" style="margin-left:auto;text-align:right;">
+    <div class="nav-label">下一阶段 →</div>
+    <div class="nav-title">{{ phase.next.name }}</div>
+  </a>
+  {% endif %}
+</div>
+{% endif %}
+
+{% if phase.doc %}
+<details style="margin-top:24px;font-size:0.875rem;color:var(--ink-faint);">
+  <summary style="cursor:pointer;">查看原始数据</summary>
+  <pre style="margin-top:8px;padding:16px;background:var(--code-bg);border-radius:4px;overflow:auto;font-size:0.8125rem;">{{ phase | dump(2) }}</pre>
+</details>
+{% endif %}
 {% endblock %}
